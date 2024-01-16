@@ -1,3 +1,2 @@
-configuration_as_code:
-  jenkins:
-    systemMessage: Welcome to our CI\CD server. This is configured as Code using from git.
+jenkins:
+  systemMessage: "Welcome to my Jenkins Instance"
