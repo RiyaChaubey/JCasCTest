@@ -1,2 +1,2 @@
 jenkins:
-  systemMessage: "Welcome to my Jenkins Instance"
+  systemMessage: "Welcome to my Jenkins Instance. Git Sync"
