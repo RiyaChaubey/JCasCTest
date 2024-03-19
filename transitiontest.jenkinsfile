@@ -88,8 +88,7 @@ pipeline {
                         if (commentForTickets) {
                                 withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
                                     def jiraUtils = new JiraUtils()
-                                    tickets = ticketNumbers
-                                    JiraUtils.JiraOpResult result = jiraUtils.addCommentToTickets(tickets as String[], password, commentForTickets)
+                                    JiraUtils.JiraOpResult result = jiraUtils.addCommentToTickets(ticketNumbers as String[], password, commentForTickets)
                                     if (result.getResultStr()) {
                                         echo "Result of updating modTickets: ${result.getResultStr()}"
                                     }
