@@ -73,12 +73,14 @@ for x in data['cases']:
     print("Moving case:{} to CI-Verified".format(x))
     try:
         issue=jira.issue(x)
-        if x.startswith("SHIELD-", "AC-"):
-            moveCastState(x,"CI-Verified")
-        else:
-            moveCastState(x,"In Review/Test")
-        if args.fixed_in_build is not None:
-            update_fixed_in_build(issue, args.fixed_in_build)
+        print(x)
+        print(type(x))
+        # if x.startswith("SHIELD-", "AC-"):
+        #     moveCastState(x,"CI-Verified")
+        # else:
+        #     moveCastState(x,"In Review/Test")
+        # if args.fixed_in_build is not None:
+        #     update_fixed_in_build(issue, args.fixed_in_build)
     except:
         print ("Exception While trying to move the case {} to CI-Verified".format(x))
         traceback.print_exc()
