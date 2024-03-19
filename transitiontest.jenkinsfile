@@ -71,7 +71,6 @@ pipeline {
         stage('Update tickets') {
             steps {
                 script {
-                        writeFile file: 'cases.json', text: JiraCasesJson
                         withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
                             sh """
                             export > /tmp/my_env.txt
