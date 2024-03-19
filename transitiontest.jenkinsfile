@@ -57,7 +57,7 @@ pipeline {
                                                         forRelease       : kubeVersion]
                                 jsonState = JsonOutput.toJson(jsonStateDict)
                                 echo "The state is: ${jsonState}"
-                                writeFile file: 'cases.json', text: ${jsonState}
+                                writeFile file: 'cases.json', text: jsonState
                         } else {
                             echo 'Previous build exists, but not previous commit'
                         }
