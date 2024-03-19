@@ -71,7 +71,6 @@ def update_fixed_in_build(issue, fixed_in_build):
 # TODO: CP check cases state names in new Jira
 for x in data['cases']:
     try:
-        issue=jira.issue(x)
         if x.startswith("SHIELD-") or x.startswith("AC-"):
             print("Moving case:{} to CI-Verified".format(x))
             moveCastState(x,"CI-Verified")
@@ -79,6 +78,7 @@ for x in data['cases']:
             print("Moving case:{} to In Review/Test".format(x))
             moveCastState(x,"In Review/Test")
         if args.fixed_in_build is not None:
+            issue=jira.issue(x)
             update_fixed_in_build(issue, args.fixed_in_build)
     except:
         print ("Exception While trying to move the case {} to next state".format(x))
