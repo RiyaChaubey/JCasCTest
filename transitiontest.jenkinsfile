@@ -1,0 +1,87 @@
+def thereAreChanges = false
+import java.time.*
+import groovy.json.JsonOutput
+def commitId = "7d2f9c945"
+def jsonState
+def isMaster = false
+def kubeVersion
+pipeline {
+    parameters {
+        string(name: 'KUBE_BRANCH', defaultValue: params.KUBE_BRANCH ?:'', description: 'Branch in kube to check for changes')
+    }
+    agent any
+    options {
+        timestamps()
+    }
+    stages {
+        stage('Checkout Repository') {
+            steps {
+                checkout(
+                        [$class                           : 'GitSCM', quietOperation: true,
+                            branches                         : [[name: "origin/${KUBE_BRANCH}"]],
+                            doGenerateSubmoduleConfigurations: false,
+                            extensions                       : [[$class: 'CleanCheckout']],
+                            submoduleCfg                     : [],
+                            userRemoteConfigs                : [[credentialsId: 'gitsshkey', name: 'origin', url: 'git@github.com:RiyaChaubey/JCasCTest.git']]
+                        ]
+                )
+            }
+        }
+        stage('Check actual changes') {
+            steps {
+                script {
+                    try {
+                        def previousCommit = "7d2f9c945"
+                        
+                        if (previousCommit) {
+                            sh """
+                            echo Modified files:
+                            git log --format='XXX: %H' --name-only -50 ${previousCommit}..HEAD  | grep -v XXX | sort | uniq
+                            """
+                            
+                                def contributorsEmail = sh(script: "git log --format='%ae' -50 ${previousCommit}..HEAD | sort | uniq", returnStdout: true).trim().split('\n')
+                                echo "Contributors: ${contributorsEmail}"
+                                def ticketNumbers = sh(script: "git log --format='%B' -50 ${previousCommit}..HEAD | grep -E -o '\\b(SHIELD|AC|XSWG|XRBI|XCSB|XSSP)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
+                                echo "Tickets: ${ticketNumbers}"
+                                def prsNum = sh(script: """git log -50 ${previousCommit}..HEAD | grep "Merge pull request" | wc -l""", returnStdout: true).trim()
+                                echo "Number of PRs: ${prsNum}"
+                                // kubeVersion = readFile("version.txt").trim().replace('\n', '').replace('\r', '')
+                                def jsonStateDict = [cases            : ticketNumbers,
+                                                        "shield-build"   : "kube-mb-${BUILD_NUMBER}",
+                                                        commitID         : commitId,
+                                                        tags             : [],
+                                                        detectedTickets  : ticketNumbers,
+                                                        contributorsEmail: contributorsEmail,
+                                                        prsNum           : "${prsNum}",
+                                                        isMaster         : (isMaster ? "true" : "false"),
+                                                        forRelease       : kubeVersion]
+                                jsonState = JsonOutput.toJson(jsonStateDict)
+                                echo "The state is: ${jsonState}"
+                                writeFile file: 'cases.json', text: ${jsonState}
+                        } else {
+                            echo 'Previous build exists, but not previous commit'
+                        }
+                    }
+                     catch (Exception e) {
+                        error "Checking commits fail: ${e.toString()}"
+                    }
+                }
+            }
+        }
+        stage('Update tickets') {
+            steps {
+                script {
+                        writeFile file: 'cases.json', text: JiraCasesJson
+                        withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
+                            sh """
+                            export > /tmp/my_env.txt
+                            # sleep 600 || true
+                            pip3 install -r requirements.txt
+                            python3 move_cases_to_ci_verified.py --jira_pwd ${password} --jiracases_filename ./cases.json --fixed_in_build 123-test
+                            """
+                        } //with Credentials
+                } // script
+            }//steps
+        }
+    }
+}
