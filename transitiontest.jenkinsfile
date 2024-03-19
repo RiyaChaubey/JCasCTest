@@ -83,26 +83,27 @@ pipeline {
                             """
                             commentForTickets = "Added in version 123-test"
                         } //with Credentials
+
+                    try {
+                        if (commentForTickets) {
+                                withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
+                                    def jiraUtils = new JiraUtils()
+                                    JiraUtils.JiraOpResult result = jiraUtils.addCommentToTickets(tickets as String[], password, commentForTickets)
+                                    if (result.getResultStr()) {
+                                        echo "Result of updating modTickets: ${result.getResultStr()}"
+                                    }
+                                    if (result.getLogMsg()) {
+                                        echo "Logs of updating modTickets: ${result.getLogMsg()}"
+                                    }
+                                    if (result.getErrMsg()) {
+                                        echo "Errors of updating modTickets: ${result.getErrMsg()}"
+                                    }
+                                } // withCredentials
+                        } // if
+                    } catch (Exception e) {
+                        echo "Failed adding comment: ${e.toString()}"
+                    }
                 } // script
-                try {
-                    if (commentForTickets) {
-                            withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
-                                def jiraUtils = new JiraUtils()
-                                JiraUtils.JiraOpResult result = jiraUtils.addCommentToTickets(tickets as String[], password, commentForTickets)
-                                if (result.getResultStr()) {
-                                    echo "Result of updating modTickets: ${result.getResultStr()}"
-                                }
-                                if (result.getLogMsg()) {
-                                    echo "Logs of updating modTickets: ${result.getLogMsg()}"
-                                }
-                                if (result.getErrMsg()) {
-                                    echo "Errors of updating modTickets: ${result.getErrMsg()}"
-                                }
-                            } // withCredentials
-                    } // if
-                } catch (Exception e) {
-                    echo "Failed adding comment: ${e.toString()}"
-                }
             }//steps
         }   
     }
