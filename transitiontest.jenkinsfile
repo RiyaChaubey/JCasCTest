@@ -41,7 +41,7 @@ pipeline {
                             
                                 def contributorsEmail = sh(script: "git log --format='%ae' -50 ${previousCommit}..HEAD | sort | uniq", returnStdout: true).trim().split('\n')
                                 echo "Contributors: ${contributorsEmail}"
-                                def ticketNumbers = sh(script: "git log --format='%B' -50 ${previousCommit}..HEAD | grep -E -o '\\b(SHIELD|AC|XSWG|XRBI|XCSB|XSSP|PEZTE)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
+                                def ticketNumbers = sh(script: "git log --format='%B' -50 ${previousCommit}..HEAD | grep -E -o '\\b(PEZTE)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
                                 echo "Tickets: ${ticketNumbers}"
                                 def prsNum = sh(script: """git log -50 ${previousCommit}..HEAD | grep "Merge pull request" | wc -l""", returnStdout: true).trim()
                                 echo "Number of PRs: ${prsNum}"

@@ -71,6 +71,7 @@ def update_fixed_in_build(issue, fixed_in_build):
 # TODO: CP check cases state names in new Jira
 for x in data['cases']:
     try:
+        issue=jira.issue(x)
         if x.startswith("SHIELD-") or x.startswith("AC-"):
             print("Moving case:{} to CI-Verified".format(x))
             moveCastState(x,"CI-Verified")
