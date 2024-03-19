@@ -109,7 +109,7 @@ pipeline {
                         def ticketsIdsFile = "tickets-2.txt"
                         sh """
                         pip3 install -r requirements.txt
-                    python3 DevOps/ciNightlyRun/scripts/moveTicketsBetweenStates.py --fromState "In Review/Test" --toState Done --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
+                    python3 DevOps/ciNightlyRun/scripts/moveTicketsBetweenStates.py --fromState "Review/In Test" --toState Done --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
     
                     """
                 } // script

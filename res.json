@@ -1,0 +1,101 @@
+{
+    "expand": "transitions",
+    "transitions": [
+        {
+            "id": "141",
+            "name": "Rework",
+            "to": {
+                "self": "https://cradlepoint.atlassian.net/rest/api/3/status/3",
+                "description": "This issue is being actively worked on at the moment by the assignee.",
+                "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/inprogress.png",
+                "name": "In Progress",
+                "id": "3",
+                "statusCategory": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                    "id": 4,
+                    "key": "indeterminate",
+                    "colorName": "yellow",
+                    "name": "In Progress"
+                }
+            },
+            "hasScreen": true,
+            "isGlobal": false,
+            "isInitial": false,
+            "isAvailable": true,
+            "isConditional": false,
+            "isLooped": false
+        },
+        {
+            "id": "161",
+            "name": "In Review/Test",
+            "to": {
+                "self": "https://cradlepoint.atlassian.net/rest/api/3/status/13087",
+                "description": "",
+                "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/generic.png",
+                "name": "Review/In Test",
+                "id": "13087",
+                "statusCategory": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                    "id": 4,
+                    "key": "indeterminate",
+                    "colorName": "yellow",
+                    "name": "In Progress"
+                }
+            },
+            "hasScreen": false,
+            "isGlobal": false,
+            "isInitial": false,
+            "isAvailable": true,
+            "isConditional": false,
+            "isLooped": false
+        },
+        {
+            "id": "41",
+            "name": "Done",
+            "to": {
+                "self": "https://cradlepoint.atlassian.net/rest/api/3/status/10001",
+                "description": "Live support is completed and all high priority bugs have been fixed.",
+                "iconUrl": "https://cradlepoint.atlassian.net/images/icons/subtask.gif",
+                "name": "Done",
+                "id": "10001",
+                "statusCategory": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/3",
+                    "id": 3,
+                    "key": "done",
+                    "colorName": "green",
+                    "name": "Done"
+                }
+            },
+            "hasScreen": true,
+            "isGlobal": false,
+            "isInitial": false,
+            "isAvailable": true,
+            "isConditional": true,
+            "isLooped": false
+        },
+        {
+            "id": "111",
+            "name": "Move to Backlog",
+            "to": {
+                "self": "https://cradlepoint.atlassian.net/rest/api/3/status/10000",
+                "description": "Backlog item has been reviewed and is ready for development.",
+                "iconUrl": "https://cradlepoint.atlassian.net/images/icons/subtask.gif",
+                "name": "Ready",
+                "id": "10000",
+                "statusCategory": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/2",
+                    "id": 2,
+                    "key": "new",
+                    "colorName": "blue-gray",
+                    "name": "To Do"
+                }
+            },
+            "hasScreen": true,
+            "isGlobal": false,
+            "isInitial": false,
+            "isAvailable": true,
+            "isConditional": false,
+            "isLooped": false
+        }
+    ]
+}
