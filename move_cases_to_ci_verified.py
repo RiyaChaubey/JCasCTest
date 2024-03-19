@@ -53,8 +53,6 @@ except:
 # Function use to move Cases
 def getNextTransition(issue,name):
     transitions = jira.transitions(issue)
-    print("getNextTransition")
-    print(transitions)
     for t in transitions:
         #print (t['id'], t['name']) 
         if (t['to']['name']==name) or (t['name']==name):
@@ -62,8 +60,6 @@ def getNextTransition(issue,name):
         
 def moveCastState(issue,newState):
     NextStateNumber=getNextTransition(issue,newState)
-    print("NEXT TRANSITION NUMBER")
-    print(NextStateNumber)
     if dryRun:
         print ("[DEBUG] Dry Run - Going to change state to cases {} to {}".format(issue,NextStateNumber))
     else:
@@ -85,6 +81,6 @@ for x in data['cases']:
         if args.fixed_in_build is not None:
             update_fixed_in_build(issue, args.fixed_in_build)
     except:
-        print ("Exception While trying to move the case {} to next state".format(x))
+        print ("Exception While trying to move the case {} to CI-Verified or In-Review/Test state".format(x))
         traceback.print_exc()
 
