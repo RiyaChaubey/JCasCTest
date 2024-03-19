@@ -8,6 +8,7 @@ def commitId = "7d2f9c945"
 def jsonState
 def isMaster = false
 def kubeVersion
+def ticketNumbers
 pipeline {
     parameters {
         string(name: 'KUBE_BRANCH', defaultValue: params.KUBE_BRANCH ?:'', description: 'Branch in kube to check for changes')
@@ -44,7 +45,7 @@ pipeline {
                             
                                 def contributorsEmail = sh(script: "git log --format='%ae' -50 ${previousCommit}..HEAD | sort | uniq", returnStdout: true).trim().split('\n')
                                 echo "Contributors: ${contributorsEmail}"
-                                def ticketNumbers = sh(script: "git log --format='%B' -50 ${previousCommit}..HEAD | grep -E -o '\\b(PEZTE)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
+                                ticketNumbers = sh(script: "git log --format='%B' -50 ${previousCommit}..HEAD | grep -E -o '\\b(PEZTE)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
                                 echo "Tickets: ${ticketNumbers}"
                                 def prsNum = sh(script: """git log -50 ${previousCommit}..HEAD | grep "Merge pull request" | wc -l""", returnStdout: true).trim()
                                 echo "Number of PRs: ${prsNum}"
@@ -88,6 +89,7 @@ pipeline {
                         if (commentForTickets) {
                                 withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
                                     def jiraUtils = new JiraUtils()
+                                    echo "${ticketNumbers}"
                                     JiraUtils.JiraOpResult result = jiraUtils.addCommentToTickets(ticketNumbers as String[], password, commentForTickets)
                                     if (result.getResultStr()) {
                                         echo "Result of updating modTickets: ${result.getResultStr()}"
