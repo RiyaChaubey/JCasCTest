@@ -78,9 +78,29 @@ pipeline {
                             pip3 install -r requirements.txt
                             python3 move_cases_to_ci_verified.py --jira_pwd ${password} --jiracases_filename ./cases.json --fixed_in_build 123-test
                             """
+                            commentForTickets = "Added in version 123-test"
                         } //with Credentials
                 } // script
+                try {
+                    if (commentForTickets) {
+                            withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
+                                def jiraUtils = new JiraUtils()
+                                JiraUtils.JiraOpResult result = jiraUtils.addCommentToTickets(tickets as String[], password, commentForTickets)
+                                if (result.getResultStr()) {
+                                    echo "Result of updating modTickets: ${result.getResultStr()}"
+                                }
+                                if (result.getLogMsg()) {
+                                    echo "Logs of updating modTickets: ${result.getLogMsg()}"
+                                }
+                                if (result.getErrMsg()) {
+                                    echo "Errors of updating modTickets: ${result.getErrMsg()}"
+                                }
+                            } // withCredentials
+                    } // if
+                } catch (Exception e) {
+                    echo "Failed adding comment: ${e.toString()}"
+                }
             }//steps
-        }
+        }   
     }
 }
