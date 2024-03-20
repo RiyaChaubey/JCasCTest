@@ -126,13 +126,13 @@ repo = git.Repo(workspace)
 #/home/jenkins/workdir/workspace/SB/shield-build
 myJson['commitID'] = repo.head.object.hexsha
 # Read JSON
-with open(workspace+'/build.sbt', 'r') as fcc_file:
-    fcc_data = json.load(fcc_file)
+# with open(workspace+'/build.sbt', 'r') as fcc_file:
+#     fcc_data = json.load(fcc_file)
 
-# Tagim shieldBuild.jenkinsfile
-myJson['tags'] = {}
+# # Tagim shieldBuild.jenkinsfile
+# myJson['tags'] = {}
 
-for x in fcc_data['rootKey']:
-    myJson['tags'][x]=args.versionNum
+# for x in fcc_data['rootKey']:
+#     myJson['tags'][x]=args.versionNum
 
 print(json.dumps(myJson))
