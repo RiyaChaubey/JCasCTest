@@ -75,7 +75,7 @@ pipeline {
         stage('Update tickets') {
             steps {
                 script {
-                        def changeLogSets = currentBuild.rawBuild.changeSets
+                        def changeLogSets = currentBuild.changeSets
                         echo "Hellooooooooooooooooo"
                         echo ${changeLogSets}
                         withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
