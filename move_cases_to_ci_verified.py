@@ -76,11 +76,11 @@ for x in data['cases']:
             print("Moving case:{} to CI-Verified".format(x))
             moveCastState(x,"CI-Verified")
         else:
-            print("Moving case:{} to In Review/Test".format(x))
-            moveCastState(x,"In Review/Test")
+            print("Moving case:{} to Review/In Test".format(x))
+            moveCastState(x,"Review/In Test")
         if args.fixed_in_build is not None:
             update_fixed_in_build(issue, args.fixed_in_build)
     except:
-        print ("Exception While trying to move the case {} to CI-Verified or In-Review/Test state".format(x))
+        print ("Exception While trying to move the case {} to CI-Verified or Review/In Test state".format(x))
         traceback.print_exc()
 
