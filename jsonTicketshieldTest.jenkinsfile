@@ -40,7 +40,7 @@ pipeline {
                         writeJSON file: ticketsFile, json: tickets
                         sh "cat ${ticketsFile}"
                         def tag = "123-test"
-                        def output = sh(script: """python3 ShieldBuild-GenerateJson.py --jira_pwd ${password} --versionNum ${tag} --ticketsFile ${ticketsFile}""", returnStdout: true).trim()
+                        def output = sh(script: """pip3 install -r requirements.txt && python3 ShieldBuild-GenerateJson.py --jira_pwd ${password} --versionNum ${tag} --ticketsFile ${ticketsFile}""", returnStdout: true).trim()
                         echo "The output is: ${output}"
                     }
                 }
