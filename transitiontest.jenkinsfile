@@ -75,6 +75,9 @@ pipeline {
         stage('Update tickets') {
             steps {
                 script {
+                        def changeLogSets = currentBuild.rawBuild.changeSets
+                        echo "Hellooooooooooooooooo"
+                        echo ${changeLogSets}
                         withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
                             sh """
                             export > /tmp/my_env.txt
@@ -84,8 +87,6 @@ pipeline {
                             """
                             commentForTickets = "Added in version 123-test"
                         } //with Credentials
-                        def changeLogSets = currentBuild.rawBuild.changeSets
-                        echo ${changeLogSets}
                         try {
                             if (commentForTickets) {
                                     withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
