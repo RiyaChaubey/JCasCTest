@@ -77,7 +77,7 @@ pipeline {
                 script {
                         def changeLogSets = currentBuild.changeSets
                         echo "Hellooooooooooooooooo"
-                        echo ${changeLogSets}
+                        echo "The state is: ${changeLogSets}"
                         withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
                             sh """
                             export > /tmp/my_env.txt

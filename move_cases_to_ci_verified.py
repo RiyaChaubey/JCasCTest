@@ -55,7 +55,7 @@ def getNextTransition(issue,name):
     transitions = jira.transitions(issue)
     for t in transitions:
         #print (t['id'], t['name']) 
-        if (t['to']['name']==name) or (t['name']==name):
+        if (t['to']['name']==name):
             return t['id']
         
 def moveCastState(issue,newState):
