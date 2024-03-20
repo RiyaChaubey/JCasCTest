@@ -45,7 +45,7 @@ def get_issues_of_state(state, multilog, url_params):
     multilog.debug("get_issues_of_state - {}".format(state))
     url = "search"
     # TODO: CP new project names
-    payload = "{ \n  \"jql\": \"project in (XSWG, XRBI, XCSB, XSSP, PEZTE) AND Status = '" + state + "'\"\n}"
+    payload = "{ \n  \"jql\": \"project in (SHIELD, XSWG, XRBI, XCSB, XSSP, PEZTE) AND Status = '" + state + "'\"\n}"
     multilog.info("get_issues_of_state payload - {}".format(payload))
     response = request_jira(url_params, "POST", url, payload)
     data = json.loads(response.text.encode('utf-8'))["issues"]
