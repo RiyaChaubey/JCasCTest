@@ -84,7 +84,8 @@ pipeline {
                             """
                             commentForTickets = "Added in version 123-test"
                         } //with Credentials
-
+                        def changeLogSets = currentBuild.rawBuild.changeSets
+                        echo ${changeLogSets}
                         try {
                             if (commentForTickets) {
                                     withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
