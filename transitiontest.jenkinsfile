@@ -90,16 +90,16 @@ pipeline {
                                     withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
                                         def jiraUtils = new JiraUtils()
                                         echo "${ticketNumbers}"
-                                        JiraUtils.JiraOpResult result = jiraUtils.addCommentToTickets(ticketNumbers as String[], password, commentForTickets)
-                                        if (result.getResultStr()) {
-                                            echo "Result of updating modTickets: ${result.getResultStr()}"
-                                        }
-                                        if (result.getLogMsg()) {
-                                            echo "Logs of updating modTickets: ${result.getLogMsg()}"
-                                        }
-                                        if (result.getErrMsg()) {
-                                            echo "Errors of updating modTickets: ${result.getErrMsg()}"
-                                        }
+                                        // JiraUtils.JiraOpResult result = jiraUtils.addCommentToTickets(ticketNumbers as String[], password, commentForTickets)
+                                        // if (result.getResultStr()) {
+                                        //     echo "Result of updating modTickets: ${result.getResultStr()}"
+                                        // }
+                                        // if (result.getLogMsg()) {
+                                        //     echo "Logs of updating modTickets: ${result.getLogMsg()}"
+                                        // }
+                                        // if (result.getErrMsg()) {
+                                        //     echo "Errors of updating modTickets: ${result.getErrMsg()}"
+                                        // }
                                     } // withCredentials
                             } // if
                         } catch (Exception e) {
@@ -110,7 +110,7 @@ pipeline {
                             def ticketsIdsFile = "tickets-2.txt"
                             sh """
                             pip3 install -r requirements.txt
-                        python3 moveTicketsBetweenStates.py --fromState \\"Review/In Test\\" --toState Done --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
+                        python3 moveTicketsBetweenStates.py --fromState 'Review/In Test' --toState Done --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
         
                         """
                         }

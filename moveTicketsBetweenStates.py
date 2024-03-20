@@ -155,6 +155,8 @@ def main():
                       'Content-Type': 'application/json'
                   }
                   }
+    print("Lets go!")
+    print("{}-{}-log.txt".format(args.fromState, args.toState))
     multilog = prepare_multi_log("{}-{}-log.txt".format(args.fromState, args.toState))
     handled_issues = {}
     issues = get_issues_of_state(args.fromState, multilog, url_params)
