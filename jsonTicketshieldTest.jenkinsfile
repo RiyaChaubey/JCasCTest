@@ -42,6 +42,8 @@ pipeline {
                         def tag = "123-test"
                         def output = sh(script: """pip3 install -r requirements.txt && python3 ShieldBuild-GenerateJson.py --jira_pwd ${password} --versionNum ${tag} --ticketsFile ${ticketsFile}""", returnStdout: true).trim()
                         echo "The output is: ${output}"
+                        def output = sh(script: """pip3 install -r requirements.txt && python3 ShieldBuild-GenerateJson.py --jira_pwd ${password} --versionNum ${tag}""", returnStdout: true).trim()
+                        echo "The output is: ${output}"
                     }
                 }
             }
