@@ -1,0 +1,2059 @@
+{
+    "expand": "schema,names",
+    "startAt": 0,
+    "maxResults": 50,
+    "total": 4,
+    "issues": [
+        {
+            "expand": "customfield_12408.properties,operations,versionedRepresentations,editmeta,changelog,customfield_12000.requestTypePractice,renderedFields",
+            "id": "882763",
+            "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/882763",
+            "key": "PEZTE-37",
+            "fields": {
+                "parent": {
+                    "id": "858666",
+                    "key": "PEZTE-27",
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/858666",
+                    "fields": {
+                        "summary": "2024 RTB-Maintenance & Tech Debt",
+                        "status": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/status/3",
+                            "description": "This issue is being actively worked on at the moment by the assignee.",
+                            "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/inprogress.png",
+                            "name": "In Progress",
+                            "id": "3",
+                            "statusCategory": {
+                                "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                                "id": 4,
+                                "key": "indeterminate",
+                                "colorName": "yellow",
+                                "name": "In Progress"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/priority/10002",
+                            "iconUrl": "https://i.ibb.co/JkPpNmH/Screen-Shot-2021-05-19-at-11-07-25-AM.png",
+                            "name": "None",
+                            "id": "10002"
+                        },
+                        "issuetype": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/issuetype/10000",
+                            "id": "10000",
+                            "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.",
+                            "iconUrl": "https://cradlepoint.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10607?size=medium",
+                            "name": "Epic",
+                            "subtask": false,
+                            "avatarId": 10607,
+                            "hierarchyLevel": 1
+                        }
+                    }
+                },
+                "customfield_12491": null,
+                "customfield_12490": null,
+                "customfield_12493": null,
+                "customfield_12492": null,
+                "customfield_12495": null,
+                "customfield_12497": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11226",
+                    "value": "GA",
+                    "id": "11226"
+                },
+                "customfield_12496": null,
+                "customfield_12499": null,
+                "resolution": null,
+                "customfield_12498": null,
+                "lastViewed": null,
+                "customfield_12480": null,
+                "customfield_12482": null,
+                "customfield_12481": null,
+                "customfield_12000": null,
+                "customfield_12484": null,
+                "customfield_12483": null,
+                "customfield_12486": null,
+                "customfield_12487": null,
+                "customfield_12489": null,
+                "labels": [],
+                "customfield_11700": null,
+                "aggregatetimeoriginalestimate": null,
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3Acce9c73f-c23f-486c-b026-30a3a6dc31eb",
+                    "accountId": "712020:cce9c73f-c23f-486c-b026-30a3a6dc31eb",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png"
+                    },
+                    "displayName": "Riya Chaubey",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "components": [],
+                "customfield_12473": null,
+                "customfield_12472": null,
+                "customfield_12354": null,
+                "customfield_12353": null,
+                "customfield_12356": null,
+                "customfield_12477": null,
+                "customfield_12598": null,
+                "customfield_12355": null,
+                "customfield_12476": null,
+                "customfield_12357": null,
+                "customfield_12469": null,
+                "subtasks": [],
+                "customfield_12581": null,
+                "customfield_12580": null,
+                "customfield_12462": null,
+                "reporter": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3Acce9c73f-c23f-486c-b026-30a3a6dc31eb",
+                    "accountId": "712020:cce9c73f-c23f-486c-b026-30a3a6dc31eb",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png"
+                    },
+                    "displayName": "Riya Chaubey",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "customfield_12464": null,
+                "customfield_12463": null,
+                "customfield_12466": null,
+                "customfield_12465": null,
+                "customfield_12468": null,
+                "customfield_12467": null,
+                "customfield_12579": "*{color:#FF0000} All questions must have a \"Yes\" or \"No\" value. Leaving the value as none for \"No\" will not meet the requirements of the Questionnaire. {color}*",
+                "customfield_12458": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "issuetype": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issuetype/10001",
+                    "id": "10001",
+                    "description": "Functionality or a feature which is visible to the end-user (Migrated on 18 Aug 2023 04:53 UTC)",
+                    "iconUrl": "https://cradlepoint.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10615?size=medium",
+                    "name": "User Story",
+                    "subtask": false,
+                    "avatarId": 10615,
+                    "hierarchyLevel": 0
+                },
+                "customfield_12572": null,
+                "customfield_12450": null,
+                "project": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/project/15840",
+                    "id": "15840",
+                    "key": "PEZTE",
+                    "name": "Platform Engineering for Zero Trust Edge",
+                    "projectTypeKey": "software",
+                    "simplified": false,
+                    "avatarUrls": {
+                        "48x48": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513",
+                        "24x24": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=small",
+                        "16x16": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=xsmall",
+                        "32x32": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=medium"
+                    }
+                },
+                "customfield_12571": null,
+                "customfield_12574": null,
+                "customfield_11000": null,
+                "customfield_12573": null,
+                "customfield_12331": null,
+                "customfield_12334": null,
+                "customfield_12576": null,
+                "customfield_12455": null,
+                "customfield_12575": null,
+                "customfield_12578": null,
+                "customfield_12335": null,
+                "customfield_12456": null,
+                "customfield_12568": null,
+                "customfield_12449": null,
+                "resolutiondate": null,
+                "watches": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/PEZTE-37/watchers",
+                    "watchCount": 2,
+                    "isWatching": true
+                },
+                "customfield_12440": null,
+                "customfield_12561": null,
+                "customfield_12560": null,
+                "customfield_12562": null,
+                "customfield_12565": null,
+                "customfield_12564": [
+                    {
+                        "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11587",
+                        "value": "No",
+                        "id": "11587"
+                    }
+                ],
+                "customfield_12566": null,
+                "customfield_12437": null,
+                "customfield_12558": null,
+                "customfield_12436": null,
+                "customfield_11900": null,
+                "customfield_12439": null,
+                "customfield_12438": null,
+                "updated": "2024-03-20T06:46:17.939-0600",
+                "timeoriginalestimate": null,
+                "customfield_12550": null,
+                "description": null,
+                "customfield_12552": null,
+                "customfield_12431": [],
+                "customfield_12430": null,
+                "customfield_12551": null,
+                "customfield_12554": null,
+                "customfield_12553": null,
+                "customfield_12432": null,
+                "customfield_12556": null,
+                "customfield_12435": null,
+                "customfield_12555": null,
+                "customfield_12547": null,
+                "customfield_10005": null,
+                "customfield_12305": null,
+                "customfield_12426": null,
+                "customfield_12425": null,
+                "customfield_12546": null,
+                "customfield_10007": null,
+                "customfield_12428": null,
+                "customfield_12307": [],
+                "customfield_12427": null,
+                "customfield_12548": null,
+                "customfield_10008": "PEZTE-27",
+                "customfield_12308": null,
+                "customfield_12429": null,
+                "summary": "test",
+                "customfield_12541": null,
+                "customfield_12543": null,
+                "customfield_12422": null,
+                "customfield_10002": null,
+                "customfield_12542": null,
+                "customfield_12421": null,
+                "customfield_12424": null,
+                "customfield_12545": null,
+                "customfield_10004": null,
+                "customfield_12423": null,
+                "customfield_12544": null,
+                "customfield_12657": null,
+                "customfield_12415": null,
+                "customfield_12414": null,
+                "customfield_12417": null,
+                "customfield_12538": null,
+                "customfield_12658": null,
+                "customfield_12416": null,
+                "customfield_12537": null,
+                "customfield_12419": null,
+                "customfield_12539": null,
+                "duedate": null,
+                "statuscategorychangedate": "2024-03-20T06:46:14.297-0600",
+                "customfield_12651": null,
+                "customfield_12650": null,
+                "fixVersions": [],
+                "customfield_12653": null,
+                "customfield_11200": null,
+                "customfield_12652": null,
+                "customfield_12413": null,
+                "customfield_12654": null,
+                "customfield_12412": null,
+                "customfield_12646": null,
+                "customfield_12648": null,
+                "customfield_12647": null,
+                "customfield_12526": "Please submit responses (Yes/No) for all the qestions below. Please check the following link for more details regarding ProdSec - https://cradlepoint.atlassian.net/wiki/spaces/ProdSec/overview",
+                "customfield_12408": null,
+                "customfield_12407": null,
+                "customfield_12649": null,
+                "priority": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/priority/10002",
+                    "iconUrl": "https://i.ibb.co/JkPpNmH/Screen-Shot-2021-05-19-at-11-07-25-AM.png",
+                    "name": "None",
+                    "id": "10002"
+                },
+                "customfield_12402": null,
+                "customfield_12401": null,
+                "customfield_12514": null,
+                "customfield_12513": null,
+                "customfield_12516": null,
+                "customfield_12515": null,
+                "timeestimate": 0,
+                "customfield_12517": null,
+                "status": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/status/10700",
+                    "description": "Development work is done and pending review.",
+                    "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/generic.png",
+                    "name": "In Review",
+                    "id": "10700",
+                    "statusCategory": {
+                        "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                        "id": 4,
+                        "key": "indeterminate",
+                        "colorName": "yellow",
+                        "name": "In Progress"
+                    }
+                },
+                "customfield_12510": null,
+                "customfield_12630": null,
+                "customfield_12512": null,
+                "customfield_12511": null,
+                "customfield_12503": null,
+                "customfield_12502": null,
+                "customfield_12505": null,
+                "customfield_12626": null,
+                "customfield_12625": null,
+                "customfield_12504": null,
+                "customfield_12507": null,
+                "customfield_12628": null,
+                "aggregatetimeestimate": 0,
+                "customfield_12506": null,
+                "customfield_12627": null,
+                "customfield_12509": null,
+                "customfield_12508": null,
+                "customfield_12629": null,
+                "creator": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3Acce9c73f-c23f-486c-b026-30a3a6dc31eb",
+                    "accountId": "712020:cce9c73f-c23f-486c-b026-30a3a6dc31eb",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/dc1308145cc503407428991a999aa25e?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FRC-4.png"
+                    },
+                    "displayName": "Riya Chaubey",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10200": "2|i0de2f:",
+                "customfield_12501": null,
+                "customfield_12613": null,
+                "customfield_12612": null,
+                "timespent": null,
+                "aggregatetimespent": null,
+                "customfield_11400": null,
+                "customfield_12610": null,
+                "customfield_12602": null,
+                "customfield_12604": null,
+                "customfield_12606": null,
+                "customfield_12605": null,
+                "customfield_12608": null,
+                "customfield_12607": null,
+                "customfield_12609": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11639",
+                    "value": "No",
+                    "id": "11639"
+                },
+                "workratio": -1,
+                "created": "2024-03-19T01:52:51.756-0600",
+                "customfield_12395": null,
+                "customfield_12399": null,
+                "customfield_11500": {
+                    "hasEpicLinkFieldDependency": false,
+                    "showField": false,
+                    "nonEditableReason": {
+                        "reason": "EPIC_LINK_SHOULD_BE_USED",
+                        "message": "To set an epic as the parent, use the epic link instead"
+                    }
+                },
+                "security": null,
+                "customfield_12383": null,
+                "customfield_12385": null,
+                "customfield_12387": null,
+                "customfield_12386": null,
+                "customfield_12389": null,
+                "customfield_11600": "{}"
+            }
+        },
+        {
+            "expand": "customfield_12408.properties,operations,versionedRepresentations,editmeta,changelog,customfield_12000.requestTypePractice,renderedFields",
+            "id": "882576",
+            "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/882576",
+            "key": "PEZTE-34",
+            "fields": {
+                "parent": {
+                    "id": "858666",
+                    "key": "PEZTE-27",
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/858666",
+                    "fields": {
+                        "summary": "2024 RTB-Maintenance & Tech Debt",
+                        "status": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/status/3",
+                            "description": "This issue is being actively worked on at the moment by the assignee.",
+                            "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/inprogress.png",
+                            "name": "In Progress",
+                            "id": "3",
+                            "statusCategory": {
+                                "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                                "id": 4,
+                                "key": "indeterminate",
+                                "colorName": "yellow",
+                                "name": "In Progress"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/priority/10002",
+                            "iconUrl": "https://i.ibb.co/JkPpNmH/Screen-Shot-2021-05-19-at-11-07-25-AM.png",
+                            "name": "None",
+                            "id": "10002"
+                        },
+                        "issuetype": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/issuetype/10000",
+                            "id": "10000",
+                            "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.",
+                            "iconUrl": "https://cradlepoint.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10607?size=medium",
+                            "name": "Epic",
+                            "subtask": false,
+                            "avatarId": 10607,
+                            "hierarchyLevel": 1
+                        }
+                    }
+                },
+                "customfield_12491": null,
+                "customfield_12490": null,
+                "customfield_12493": null,
+                "customfield_12492": null,
+                "customfield_12495": null,
+                "customfield_12497": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11226",
+                    "value": "GA",
+                    "id": "11226"
+                },
+                "customfield_12496": null,
+                "customfield_12499": null,
+                "customfield_12498": null,
+                "resolution": null,
+                "lastViewed": null,
+                "customfield_12480": null,
+                "customfield_12482": null,
+                "customfield_12481": null,
+                "customfield_12484": null,
+                "customfield_12000": null,
+                "customfield_12483": null,
+                "customfield_12486": null,
+                "customfield_12487": null,
+                "labels": [],
+                "customfield_12489": null,
+                "customfield_11700": null,
+                "aggregatetimeoriginalestimate": null,
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "components": [],
+                "customfield_12473": null,
+                "customfield_12472": null,
+                "customfield_12354": null,
+                "customfield_12353": null,
+                "customfield_12356": null,
+                "customfield_12598": null,
+                "customfield_12477": null,
+                "customfield_12476": null,
+                "customfield_12355": null,
+                "customfield_12357": null,
+                "customfield_12469": null,
+                "subtasks": [],
+                "customfield_12581": null,
+                "customfield_12580": null,
+                "customfield_12462": null,
+                "customfield_12464": null,
+                "reporter": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "customfield_12463": null,
+                "customfield_12466": null,
+                "customfield_12465": null,
+                "customfield_12468": null,
+                "customfield_12467": null,
+                "customfield_12458": null,
+                "customfield_12579": "*{color:#FF0000} All questions must have a \"Yes\" or \"No\" value. Leaving the value as none for \"No\" will not meet the requirements of the Questionnaire. {color}*",
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "issuetype": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issuetype/10001",
+                    "id": "10001",
+                    "description": "Functionality or a feature which is visible to the end-user (Migrated on 18 Aug 2023 04:53 UTC)",
+                    "iconUrl": "https://cradlepoint.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10615?size=medium",
+                    "name": "User Story",
+                    "subtask": false,
+                    "avatarId": 10615,
+                    "hierarchyLevel": 0
+                },
+                "customfield_12572": null,
+                "customfield_12571": null,
+                "customfield_12450": null,
+                "project": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/project/15840",
+                    "id": "15840",
+                    "key": "PEZTE",
+                    "name": "Platform Engineering for Zero Trust Edge",
+                    "projectTypeKey": "software",
+                    "simplified": false,
+                    "avatarUrls": {
+                        "48x48": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513",
+                        "24x24": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=small",
+                        "16x16": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=xsmall",
+                        "32x32": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=medium"
+                    }
+                },
+                "customfield_12574": null,
+                "customfield_11000": null,
+                "customfield_12573": null,
+                "customfield_12331": null,
+                "customfield_12576": null,
+                "customfield_12455": null,
+                "customfield_12334": null,
+                "customfield_12575": null,
+                "customfield_12578": null,
+                "customfield_12335": null,
+                "customfield_12456": null,
+                "customfield_12568": null,
+                "customfield_12449": null,
+                "resolutiondate": null,
+                "watches": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/PEZTE-34/watchers",
+                    "watchCount": 1,
+                    "isWatching": false
+                },
+                "customfield_12440": null,
+                "customfield_12561": null,
+                "customfield_12560": null,
+                "customfield_12562": null,
+                "customfield_12565": null,
+                "customfield_12564": [
+                    {
+                        "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11587",
+                        "value": "No",
+                        "id": "11587"
+                    }
+                ],
+                "customfield_12566": null,
+                "customfield_12558": null,
+                "customfield_12437": null,
+                "customfield_12436": null,
+                "customfield_11900": null,
+                "customfield_12439": null,
+                "customfield_12438": null,
+                "updated": "2024-03-19T09:42:59.485-0600",
+                "timeoriginalestimate": null,
+                "customfield_12550": null,
+                "description": {
+                    "version": 1,
+                    "type": "doc",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "As described here "
+                                },
+                                {
+                                    "type": "inlineCard",
+                                    "attrs": {
+                                        "url": "https://ericom.atlassian.net/browse/SHIELD-22112"
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "  "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "https://github.com/EricomSoftwareLtd/Jenkins-Configuration-as-code/pull/613/files",
+                                    "marks": [
+                                        {
+                                            "type": "link",
+                                            "attrs": {
+                                                "href": "https://github.com/EricomSoftwareLtd/Jenkins-Configuration-as-code/pull/613/files"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "If the first job fail - the next one will not run."
+                                },
+                                {
+                                    "type": "hardBreak"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "If any of them fails - the next steps (currently there are none, but it might change) will not run."
+                                },
+                                {
+                                    "type": "hardBreak"
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "I recommend setting "
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "propagate",
+                                    "marks": [
+                                        {
+                                            "type": "code"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " to false, check the result of the run, and if any of them fails - write a message on Slack and send an email."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "AC:",
+                                    "marks": [
+                                        {
+                                            "type": "strong"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "bulletList",
+                            "content": [
+                                {
+                                    "type": "listItem",
+                                    "content": [
+                                        {
+                                            "type": "paragraph",
+                                            "content": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "Job should not fail for this stage fail"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "listItem",
+                                    "content": [
+                                        {
+                                            "type": "paragraph",
+                                            "content": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "Send Slack message if any of then fail when trigger."
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "customfield_12431": [],
+                "customfield_12552": null,
+                "customfield_12430": null,
+                "customfield_12551": null,
+                "customfield_12554": null,
+                "customfield_12432": null,
+                "customfield_12553": null,
+                "customfield_12556": null,
+                "customfield_12435": null,
+                "customfield_12555": null,
+                "customfield_12547": null,
+                "customfield_10005": null,
+                "customfield_12426": null,
+                "customfield_12305": null,
+                "customfield_12546": null,
+                "customfield_12425": null,
+                "customfield_12428": null,
+                "customfield_10007": [
+                    {
+                        "id": 6443,
+                        "name": "PEZTE.24.06",
+                        "state": "active",
+                        "boardId": 1000,
+                        "goal": "",
+                        "startDate": "2024-03-13T08:44:33.106Z",
+                        "endDate": "2024-03-27T08:44:00.000Z"
+                    }
+                ],
+                "customfield_12307": [],
+                "customfield_12548": null,
+                "customfield_12427": null,
+                "customfield_10008": "PEZTE-27",
+                "customfield_12429": null,
+                "customfield_12308": null,
+                "summary": "Include propagate false on split job Trigger multi_branch_sb_hoo and kube-hook-multibranch statge",
+                "customfield_12541": null,
+                "customfield_12543": null,
+                "customfield_12422": null,
+                "customfield_12542": null,
+                "customfield_10002": null,
+                "customfield_12421": null,
+                "customfield_12424": null,
+                "customfield_12545": null,
+                "customfield_12423": null,
+                "customfield_10004": null,
+                "customfield_12544": null,
+                "customfield_12657": null,
+                "customfield_12415": null,
+                "customfield_12414": null,
+                "customfield_12538": null,
+                "customfield_12417": null,
+                "customfield_12658": null,
+                "customfield_12537": null,
+                "customfield_12416": null,
+                "customfield_12419": null,
+                "customfield_12539": null,
+                "duedate": null,
+                "statuscategorychangedate": "2024-03-18T14:12:20.437-0600",
+                "customfield_12651": null,
+                "fixVersions": [],
+                "customfield_12650": null,
+                "customfield_12653": null,
+                "customfield_11200": null,
+                "customfield_12652": null,
+                "customfield_12413": null,
+                "customfield_12654": null,
+                "customfield_12412": null,
+                "customfield_12646": null,
+                "customfield_12648": null,
+                "customfield_12526": "Please submit responses (Yes/No) for all the qestions below. Please check the following link for more details regarding ProdSec - https://cradlepoint.atlassian.net/wiki/spaces/ProdSec/overview",
+                "customfield_12647": null,
+                "customfield_12408": null,
+                "customfield_12649": null,
+                "customfield_12407": null,
+                "priority": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/priority/10002",
+                    "iconUrl": "https://i.ibb.co/JkPpNmH/Screen-Shot-2021-05-19-at-11-07-25-AM.png",
+                    "name": "None",
+                    "id": "10002"
+                },
+                "customfield_12402": null,
+                "customfield_12401": null,
+                "customfield_12514": null,
+                "customfield_12513": null,
+                "customfield_12516": null,
+                "customfield_12515": null,
+                "timeestimate": null,
+                "customfield_12517": null,
+                "status": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/status/10700",
+                    "description": "Development work is done and pending review.",
+                    "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/generic.png",
+                    "name": "In Review",
+                    "id": "10700",
+                    "statusCategory": {
+                        "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                        "id": 4,
+                        "key": "indeterminate",
+                        "colorName": "yellow",
+                        "name": "In Progress"
+                    }
+                },
+                "customfield_12510": null,
+                "customfield_12630": null,
+                "customfield_12512": null,
+                "customfield_12511": null,
+                "customfield_12503": null,
+                "customfield_12502": null,
+                "customfield_12505": null,
+                "customfield_12626": null,
+                "customfield_12625": null,
+                "customfield_12504": null,
+                "customfield_12628": null,
+                "aggregatetimeestimate": null,
+                "customfield_12507": null,
+                "customfield_12627": null,
+                "customfield_12506": null,
+                "customfield_12509": null,
+                "customfield_12629": null,
+                "customfield_12508": null,
+                "creator": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10200": "2|i0debi:i",
+                "customfield_12501": null,
+                "customfield_12613": null,
+                "customfield_12612": null,
+                "timespent": null,
+                "aggregatetimespent": null,
+                "customfield_12610": null,
+                "customfield_11400": null,
+                "customfield_12602": null,
+                "customfield_12604": null,
+                "customfield_12606": null,
+                "customfield_12605": null,
+                "customfield_12608": null,
+                "customfield_12607": null,
+                "customfield_12609": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11639",
+                    "value": "No",
+                    "id": "11639"
+                },
+                "workratio": -1,
+                "created": "2024-03-18T11:59:00.221-0600",
+                "customfield_12395": null,
+                "customfield_12399": null,
+                "customfield_11500": {
+                    "hasEpicLinkFieldDependency": false,
+                    "showField": false,
+                    "nonEditableReason": {
+                        "reason": "EPIC_LINK_SHOULD_BE_USED",
+                        "message": "To set an epic as the parent, use the epic link instead"
+                    }
+                },
+                "security": null,
+                "customfield_12383": null,
+                "customfield_12385": null,
+                "customfield_12387": null,
+                "customfield_12386": null,
+                "customfield_12389": null,
+                "customfield_11600": "{pullrequest={dataType=pullrequest, state=OPEN, stateCount=1}, json={\"cachedValue\":{\"errors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":1,\"lastUpdated\":\"2024-03-18T14:17:30.000-0600\",\"stateCount\":1,\"state\":\"OPEN\",\"dataType\":\"pullrequest\",\"open\":true},\"byInstanceType\":{\"GitHub\":{\"count\":1,\"name\":\"GitHub\"}}}}},\"isStale\":true}}"
+            }
+        },
+        {
+            "expand": "customfield_12408.properties,operations,versionedRepresentations,editmeta,changelog,customfield_12000.requestTypePractice,renderedFields",
+            "id": "882194",
+            "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/882194",
+            "key": "PEZTE-31",
+            "fields": {
+                "parent": {
+                    "id": "858666",
+                    "key": "PEZTE-27",
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/858666",
+                    "fields": {
+                        "summary": "2024 RTB-Maintenance & Tech Debt",
+                        "status": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/status/3",
+                            "description": "This issue is being actively worked on at the moment by the assignee.",
+                            "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/inprogress.png",
+                            "name": "In Progress",
+                            "id": "3",
+                            "statusCategory": {
+                                "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                                "id": 4,
+                                "key": "indeterminate",
+                                "colorName": "yellow",
+                                "name": "In Progress"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/priority/10002",
+                            "iconUrl": "https://i.ibb.co/JkPpNmH/Screen-Shot-2021-05-19-at-11-07-25-AM.png",
+                            "name": "None",
+                            "id": "10002"
+                        },
+                        "issuetype": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/issuetype/10000",
+                            "id": "10000",
+                            "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.",
+                            "iconUrl": "https://cradlepoint.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10607?size=medium",
+                            "name": "Epic",
+                            "subtask": false,
+                            "avatarId": 10607,
+                            "hierarchyLevel": 1
+                        }
+                    }
+                },
+                "customfield_12491": null,
+                "customfield_12490": null,
+                "customfield_12493": null,
+                "customfield_12492": null,
+                "customfield_12495": null,
+                "customfield_12497": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11226",
+                    "value": "GA",
+                    "id": "11226"
+                },
+                "customfield_12496": null,
+                "customfield_12499": null,
+                "customfield_12498": null,
+                "resolution": null,
+                "lastViewed": null,
+                "customfield_12480": null,
+                "customfield_12482": null,
+                "customfield_12481": null,
+                "customfield_12484": null,
+                "customfield_12000": null,
+                "customfield_12483": null,
+                "customfield_12486": null,
+                "customfield_12487": null,
+                "customfield_12489": null,
+                "labels": [],
+                "customfield_11700": null,
+                "aggregatetimeoriginalestimate": null,
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "components": [],
+                "customfield_12473": null,
+                "customfield_12472": null,
+                "customfield_12354": null,
+                "customfield_12353": null,
+                "customfield_12598": null,
+                "customfield_12356": null,
+                "customfield_12477": null,
+                "customfield_12476": null,
+                "customfield_12355": null,
+                "customfield_12357": null,
+                "customfield_12469": null,
+                "subtasks": [],
+                "customfield_12581": null,
+                "customfield_12580": null,
+                "customfield_12462": null,
+                "customfield_12464": null,
+                "reporter": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "customfield_12463": null,
+                "customfield_12466": null,
+                "customfield_12465": null,
+                "customfield_12468": null,
+                "customfield_12467": null,
+                "customfield_12579": "*{color:#FF0000} All questions must have a \"Yes\" or \"No\" value. Leaving the value as none for \"No\" will not meet the requirements of the Questionnaire. {color}*",
+                "customfield_12458": null,
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "issuetype": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issuetype/10001",
+                    "id": "10001",
+                    "description": "Functionality or a feature which is visible to the end-user (Migrated on 18 Aug 2023 04:53 UTC)",
+                    "iconUrl": "https://cradlepoint.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10615?size=medium",
+                    "name": "User Story",
+                    "subtask": false,
+                    "avatarId": 10615,
+                    "hierarchyLevel": 0
+                },
+                "customfield_12572": null,
+                "customfield_12571": null,
+                "project": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/project/15840",
+                    "id": "15840",
+                    "key": "PEZTE",
+                    "name": "Platform Engineering for Zero Trust Edge",
+                    "projectTypeKey": "software",
+                    "simplified": false,
+                    "avatarUrls": {
+                        "48x48": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513",
+                        "24x24": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=small",
+                        "16x16": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=xsmall",
+                        "32x32": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=medium"
+                    }
+                },
+                "customfield_12450": null,
+                "customfield_11000": null,
+                "customfield_12574": null,
+                "customfield_12331": null,
+                "customfield_12573": null,
+                "customfield_12576": null,
+                "customfield_12455": null,
+                "customfield_12334": null,
+                "customfield_12575": null,
+                "customfield_12578": null,
+                "customfield_12456": null,
+                "customfield_12335": null,
+                "customfield_12568": null,
+                "customfield_12449": null,
+                "resolutiondate": null,
+                "watches": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/PEZTE-31/watchers",
+                    "watchCount": 1,
+                    "isWatching": false
+                },
+                "customfield_12440": null,
+                "customfield_12561": null,
+                "customfield_12560": null,
+                "customfield_12562": null,
+                "customfield_12565": null,
+                "customfield_12564": [
+                    {
+                        "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11587",
+                        "value": "No",
+                        "id": "11587"
+                    }
+                ],
+                "customfield_12566": null,
+                "customfield_12437": null,
+                "customfield_12558": null,
+                "customfield_12436": null,
+                "customfield_12439": null,
+                "customfield_11900": null,
+                "customfield_12438": null,
+                "updated": "2024-03-19T09:42:54.414-0600",
+                "timeoriginalestimate": null,
+                "customfield_12550": null,
+                "description": {
+                    "version": 1,
+                    "type": "doc",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "As part of "
+                                },
+                                {
+                                    "type": "inlineCard",
+                                    "attrs": {
+                                        "url": "https://ericom.atlassian.net/browse/SHIELD-22460"
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " we created users using terraform "
+                                },
+                                {
+                                    "type": "text",
+                                    "text": "https://github.com/EricomSoftwareLtd/CloudSecOps/pull/4/files",
+                                    "marks": [
+                                        {
+                                            "type": "link",
+                                            "attrs": {
+                                                "href": "https://github.com/EricomSoftwareLtd/CloudSecOps/pull/4/files"
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " but we have lot of users which are already existed and which were created manually. We need to convert them also in terraform to manage them from terraform so that would help us to review the users and their permissions while migrating to cp-org account instead of login and checking from console."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "AC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "bulletList",
+                            "content": [
+                                {
+                                    "type": "listItem",
+                                    "content": [
+                                        {
+                                            "type": "paragraph",
+                                            "content": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "All users should import into terraform statefile"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "listItem",
+                                    "content": [
+                                        {
+                                            "type": "paragraph",
+                                            "content": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "Terraform plan should be up-to-date without making any resource changes on AWS"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "customfield_12431": [],
+                "customfield_12552": null,
+                "customfield_12551": null,
+                "customfield_12430": null,
+                "customfield_12554": null,
+                "customfield_12553": null,
+                "customfield_12432": null,
+                "customfield_12556": null,
+                "customfield_12435": null,
+                "customfield_12555": null,
+                "customfield_10005": null,
+                "customfield_12305": null,
+                "customfield_12426": null,
+                "customfield_12547": null,
+                "customfield_12425": null,
+                "customfield_12546": null,
+                "customfield_12428": null,
+                "customfield_10007": [
+                    {
+                        "id": 6443,
+                        "name": "PEZTE.24.06",
+                        "state": "active",
+                        "boardId": 1000,
+                        "goal": "",
+                        "startDate": "2024-03-13T08:44:33.106Z",
+                        "endDate": "2024-03-27T08:44:00.000Z"
+                    }
+                ],
+                "customfield_12307": [],
+                "customfield_12548": null,
+                "customfield_12427": null,
+                "customfield_10008": "PEZTE-27",
+                "customfield_12308": null,
+                "customfield_12429": null,
+                "summary": "Import existing DEV account AWS IAM users to Terraform",
+                "customfield_12541": null,
+                "customfield_12422": null,
+                "customfield_12543": null,
+                "customfield_12421": null,
+                "customfield_12542": null,
+                "customfield_10002": null,
+                "customfield_12545": null,
+                "customfield_12424": null,
+                "customfield_12423": null,
+                "customfield_12544": null,
+                "customfield_10004": null,
+                "customfield_12415": null,
+                "customfield_12657": null,
+                "customfield_12414": null,
+                "customfield_12417": null,
+                "customfield_12538": null,
+                "customfield_12537": null,
+                "customfield_12658": null,
+                "customfield_12416": null,
+                "customfield_12419": null,
+                "customfield_12539": null,
+                "duedate": null,
+                "statuscategorychangedate": "2024-03-15T17:37:42.697-0600",
+                "customfield_12651": null,
+                "customfield_12650": null,
+                "fixVersions": [],
+                "customfield_11200": null,
+                "customfield_12653": null,
+                "customfield_12652": null,
+                "customfield_12413": null,
+                "customfield_12412": null,
+                "customfield_12654": null,
+                "customfield_12646": null,
+                "customfield_12648": null,
+                "customfield_12647": null,
+                "customfield_12526": "Please submit responses (Yes/No) for all the qestions below. Please check the following link for more details regarding ProdSec - https://cradlepoint.atlassian.net/wiki/spaces/ProdSec/overview",
+                "customfield_12408": null,
+                "customfield_12649": null,
+                "customfield_12407": null,
+                "priority": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/priority/10002",
+                    "iconUrl": "https://i.ibb.co/JkPpNmH/Screen-Shot-2021-05-19-at-11-07-25-AM.png",
+                    "name": "None",
+                    "id": "10002"
+                },
+                "customfield_12402": null,
+                "customfield_12401": null,
+                "customfield_12514": null,
+                "customfield_12513": null,
+                "customfield_12516": null,
+                "customfield_12515": null,
+                "timeestimate": null,
+                "customfield_12517": null,
+                "status": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/status/10700",
+                    "description": "Development work is done and pending review.",
+                    "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/generic.png",
+                    "name": "In Review",
+                    "id": "10700",
+                    "statusCategory": {
+                        "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                        "id": 4,
+                        "key": "indeterminate",
+                        "colorName": "yellow",
+                        "name": "In Progress"
+                    }
+                },
+                "customfield_12510": null,
+                "customfield_12630": null,
+                "customfield_12512": null,
+                "customfield_12511": null,
+                "customfield_12503": null,
+                "customfield_12502": null,
+                "customfield_12626": null,
+                "customfield_12505": null,
+                "customfield_12625": null,
+                "customfield_12504": null,
+                "aggregatetimeestimate": null,
+                "customfield_12507": null,
+                "customfield_12628": null,
+                "customfield_12627": null,
+                "customfield_12506": null,
+                "customfield_12509": null,
+                "customfield_12508": null,
+                "customfield_12629": null,
+                "creator": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10200": "2|i0debh:",
+                "customfield_12501": null,
+                "customfield_12613": null,
+                "customfield_12612": null,
+                "timespent": null,
+                "aggregatetimespent": null,
+                "customfield_12610": null,
+                "customfield_11400": null,
+                "customfield_12602": null,
+                "customfield_12604": null,
+                "customfield_12606": null,
+                "customfield_12605": null,
+                "customfield_12608": null,
+                "customfield_12607": null,
+                "customfield_12609": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11639",
+                    "value": "No",
+                    "id": "11639"
+                },
+                "workratio": -1,
+                "created": "2024-03-15T17:21:13.319-0600",
+                "customfield_12395": null,
+                "customfield_12399": null,
+                "customfield_11500": {
+                    "hasEpicLinkFieldDependency": false,
+                    "showField": false,
+                    "nonEditableReason": {
+                        "reason": "EPIC_LINK_SHOULD_BE_USED",
+                        "message": "To set an epic as the parent, use the epic link instead"
+                    }
+                },
+                "security": null,
+                "customfield_12383": null,
+                "customfield_12385": null,
+                "customfield_12387": null,
+                "customfield_12386": null,
+                "customfield_12389": null,
+                "customfield_11600": "{pullrequest={dataType=pullrequest, state=OPEN, stateCount=1}, json={\"cachedValue\":{\"errors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":1,\"lastUpdated\":\"2024-03-18T21:54:28.000-0600\",\"stateCount\":1,\"state\":\"OPEN\",\"dataType\":\"pullrequest\",\"open\":true},\"byInstanceType\":{\"GitHub\":{\"count\":1,\"name\":\"GitHub\"}}}}},\"isStale\":true}}"
+            }
+        },
+        {
+            "expand": "customfield_12408.properties,operations,versionedRepresentations,editmeta,changelog,customfield_12000.requestTypePractice,renderedFields",
+            "id": "858196",
+            "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/858196",
+            "key": "PEZTE-19",
+            "fields": {
+                "parent": {
+                    "id": "858192",
+                    "key": "PEZTE-17",
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/858192",
+                    "fields": {
+                        "summary": "POC: Manage Loki with OKE cluster",
+                        "status": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/status/3",
+                            "description": "This issue is being actively worked on at the moment by the assignee.",
+                            "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/inprogress.png",
+                            "name": "In Progress",
+                            "id": "3",
+                            "statusCategory": {
+                                "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                                "id": 4,
+                                "key": "indeterminate",
+                                "colorName": "yellow",
+                                "name": "In Progress"
+                            }
+                        },
+                        "priority": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/priority/10002",
+                            "iconUrl": "https://i.ibb.co/JkPpNmH/Screen-Shot-2021-05-19-at-11-07-25-AM.png",
+                            "name": "None",
+                            "id": "10002"
+                        },
+                        "issuetype": {
+                            "self": "https://cradlepoint.atlassian.net/rest/api/3/issuetype/10000",
+                            "id": "10000",
+                            "description": "A big user story that needs to be broken down. Created by JIRA Software - do not edit or delete.",
+                            "iconUrl": "https://cradlepoint.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10607?size=medium",
+                            "name": "Epic",
+                            "subtask": false,
+                            "avatarId": 10607,
+                            "hierarchyLevel": 1
+                        }
+                    }
+                },
+                "customfield_12491": null,
+                "customfield_12490": null,
+                "customfield_12493": null,
+                "customfield_12492": null,
+                "customfield_12495": null,
+                "customfield_12497": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11226",
+                    "value": "GA",
+                    "id": "11226"
+                },
+                "customfield_12496": null,
+                "customfield_12499": null,
+                "customfield_12498": null,
+                "resolution": null,
+                "lastViewed": null,
+                "customfield_12480": null,
+                "customfield_12482": null,
+                "customfield_12481": null,
+                "customfield_12000": null,
+                "customfield_12484": null,
+                "customfield_12483": null,
+                "customfield_12486": null,
+                "customfield_12487": null,
+                "customfield_12489": null,
+                "labels": [],
+                "customfield_11700": null,
+                "aggregatetimeoriginalestimate": null,
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "components": [],
+                "customfield_12473": null,
+                "customfield_12472": null,
+                "customfield_12354": null,
+                "customfield_12353": null,
+                "customfield_12477": null,
+                "customfield_12598": null,
+                "customfield_12356": null,
+                "customfield_12355": null,
+                "customfield_12476": null,
+                "customfield_12357": null,
+                "customfield_12469": null,
+                "subtasks": [],
+                "customfield_12581": null,
+                "customfield_12580": null,
+                "customfield_12462": null,
+                "reporter": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "customfield_12464": null,
+                "customfield_12463": null,
+                "customfield_12466": null,
+                "customfield_12465": null,
+                "customfield_12468": null,
+                "customfield_12467": null,
+                "customfield_12458": null,
+                "customfield_12579": "*{color:#FF0000} All questions must have a \"Yes\" or \"No\" value. Leaving the value as none for \"No\" will not meet the requirements of the Questionnaire. {color}*",
+                "progress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "issuetype": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issuetype/10001",
+                    "id": "10001",
+                    "description": "Functionality or a feature which is visible to the end-user (Migrated on 18 Aug 2023 04:53 UTC)",
+                    "iconUrl": "https://cradlepoint.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10615?size=medium",
+                    "name": "User Story",
+                    "subtask": false,
+                    "avatarId": 10615,
+                    "hierarchyLevel": 0
+                },
+                "customfield_12572": null,
+                "customfield_12571": null,
+                "project": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/project/15840",
+                    "id": "15840",
+                    "key": "PEZTE",
+                    "name": "Platform Engineering for Zero Trust Edge",
+                    "projectTypeKey": "software",
+                    "simplified": false,
+                    "avatarUrls": {
+                        "48x48": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513",
+                        "24x24": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=small",
+                        "16x16": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=xsmall",
+                        "32x32": "https://cradlepoint.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/20513?size=medium"
+                    }
+                },
+                "customfield_12450": null,
+                "customfield_12574": null,
+                "customfield_11000": null,
+                "customfield_12573": null,
+                "customfield_12331": null,
+                "customfield_12334": null,
+                "customfield_12576": null,
+                "customfield_12455": null,
+                "customfield_12575": null,
+                "customfield_12578": null,
+                "customfield_12335": null,
+                "customfield_12456": null,
+                "customfield_12568": null,
+                "customfield_12449": null,
+                "resolutiondate": null,
+                "watches": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/issue/PEZTE-19/watchers",
+                    "watchCount": 1,
+                    "isWatching": false
+                },
+                "customfield_12440": null,
+                "customfield_12561": null,
+                "customfield_12560": null,
+                "customfield_12562": null,
+                "customfield_12565": null,
+                "customfield_12564": [
+                    {
+                        "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11325",
+                        "value": "No",
+                        "id": "11325"
+                    }
+                ],
+                "customfield_12566": null,
+                "customfield_12558": null,
+                "customfield_12437": null,
+                "customfield_12436": null,
+                "customfield_11900": null,
+                "customfield_12439": null,
+                "customfield_12438": null,
+                "updated": "2024-03-19T09:42:51.255-0600",
+                "timeoriginalestimate": null,
+                "customfield_12550": null,
+                "description": {
+                    "version": 1,
+                    "type": "doc",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "Since we validated Loki on OKE with manual steps as mentioned here "
+                                },
+                                {
+                                    "type": "inlineCard",
+                                    "attrs": {
+                                        "url": "https://cradlepoint.atlassian.net/browse/PEZTE-18"
+                                    }
+                                },
+                                {
+                                    "type": "text",
+                                    "text": " "
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "We need to automate the whole setup using terraform and helm chart."
+                                }
+                            ]
+                        },
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "AC"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "bulletList",
+                            "content": [
+                                {
+                                    "type": "listItem",
+                                    "content": [
+                                        {
+                                            "type": "paragraph",
+                                            "content": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "Able to create OKE cluster with required configuration"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "bulletList",
+                                            "content": [
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "oci_region = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "vcn_name = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": " vcn_dns_label = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "vcn_cidr = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "cp_subnet_cidr = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "public_subnet_cidr = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "svc_subnet_cidr = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "nat_allowed_cidr = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "worker_node_pool_name = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "node_shape = \"VM.Standard.xx\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "nodepool_size = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "cni_type = \"OCI_VCN_IP_NATIVE\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "node_boot_volume_size_in_gbs = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "node_memory_in_gbs = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "node_ocpus = \"\""
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "ssh_public_key "
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "listItem",
+                                    "content": [
+                                        {
+                                            "type": "paragraph",
+                                            "content": [
+                                                {
+                                                    "type": "text",
+                                                    "text": "Helm chart and manifest for"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "bulletList",
+                                            "content": [
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "Grafana"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "Loki"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "listItem",
+                                                    "content": [
+                                                        {
+                                                            "type": "paragraph",
+                                                            "content": [
+                                                                {
+                                                                    "type": "text",
+                                                                    "text": "Promtail"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "customfield_12431": [],
+                "customfield_12552": null,
+                "customfield_12551": null,
+                "customfield_12430": null,
+                "customfield_12554": null,
+                "customfield_12432": null,
+                "customfield_12553": null,
+                "customfield_12556": null,
+                "customfield_12435": null,
+                "customfield_12555": null,
+                "customfield_12426": null,
+                "customfield_12305": null,
+                "customfield_12547": null,
+                "customfield_10005": null,
+                "customfield_12425": null,
+                "customfield_12546": null,
+                "customfield_12428": null,
+                "customfield_12307": [],
+                "customfield_10007": [
+                    {
+                        "id": 6443,
+                        "name": "PEZTE.24.06",
+                        "state": "active",
+                        "boardId": 1000,
+                        "goal": "",
+                        "startDate": "2024-03-13T08:44:33.106Z",
+                        "endDate": "2024-03-27T08:44:00.000Z"
+                    }
+                ],
+                "customfield_12427": null,
+                "customfield_12548": null,
+                "customfield_10008": "PEZTE-17",
+                "customfield_12429": null,
+                "customfield_12308": null,
+                "summary": "Write a Terraform module to build an OKE Cluster with VCN Native network for Loki",
+                "customfield_12541": null,
+                "customfield_12543": null,
+                "customfield_12422": null,
+                "customfield_10002": null,
+                "customfield_12421": null,
+                "customfield_12542": null,
+                "customfield_12424": null,
+                "customfield_12545": null,
+                "customfield_12544": null,
+                "customfield_12423": null,
+                "customfield_10004": 3.0,
+                "customfield_12415": null,
+                "customfield_12657": null,
+                "customfield_12414": null,
+                "customfield_12538": null,
+                "customfield_12417": null,
+                "customfield_12658": null,
+                "customfield_12416": null,
+                "customfield_12537": null,
+                "customfield_12419": null,
+                "customfield_12539": null,
+                "duedate": null,
+                "statuscategorychangedate": "2024-03-13T09:52:55.920-0600",
+                "customfield_12651": null,
+                "customfield_12650": null,
+                "fixVersions": [],
+                "customfield_12653": null,
+                "customfield_11200": null,
+                "customfield_12652": null,
+                "customfield_12413": null,
+                "customfield_12654": null,
+                "customfield_12412": null,
+                "customfield_12646": null,
+                "customfield_12648": null,
+                "customfield_12647": null,
+                "customfield_12526": "Please submit responses (Yes/No) for all the qestions below. Please check the following link for more details regarding ProdSec - https://cradlepoint.atlassian.net/wiki/spaces/ProdSec/overview",
+                "customfield_12408": null,
+                "customfield_12407": null,
+                "customfield_12649": null,
+                "priority": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/priority/10002",
+                    "iconUrl": "https://i.ibb.co/JkPpNmH/Screen-Shot-2021-05-19-at-11-07-25-AM.png",
+                    "name": "None",
+                    "id": "10002"
+                },
+                "customfield_12402": null,
+                "customfield_12401": null,
+                "customfield_12514": null,
+                "customfield_12513": null,
+                "customfield_12516": null,
+                "customfield_12515": null,
+                "timeestimate": null,
+                "customfield_12517": null,
+                "status": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/status/10700",
+                    "description": "Development work is done and pending review.",
+                    "iconUrl": "https://cradlepoint.atlassian.net/images/icons/statuses/generic.png",
+                    "name": "In Review",
+                    "id": "10700",
+                    "statusCategory": {
+                        "self": "https://cradlepoint.atlassian.net/rest/api/3/statuscategory/4",
+                        "id": 4,
+                        "key": "indeterminate",
+                        "colorName": "yellow",
+                        "name": "In Progress"
+                    }
+                },
+                "customfield_12510": null,
+                "customfield_12630": null,
+                "customfield_12512": null,
+                "customfield_12511": null,
+                "customfield_12503": null,
+                "customfield_12502": null,
+                "customfield_12626": null,
+                "customfield_12505": null,
+                "customfield_12504": null,
+                "customfield_12625": null,
+                "customfield_12628": null,
+                "customfield_12507": null,
+                "aggregatetimeestimate": null,
+                "customfield_12627": null,
+                "customfield_12506": null,
+                "customfield_12509": null,
+                "customfield_12629": null,
+                "customfield_12508": null,
+                "creator": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/user?accountId=712020%3A59b73037-db37-4c27-8b31-eac947c9a977",
+                    "accountId": "712020:59b73037-db37-4c27-8b31-eac947c9a977",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "24x24": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "16x16": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png",
+                        "32x32": "https://secure.gravatar.com/avatar/41d1409acb94dbe2ef833663cb823a80?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FKR-4.png"
+                    },
+                    "displayName": "Krishna Varaprasad Rudraraju",
+                    "active": true,
+                    "timeZone": "America/Denver",
+                    "accountType": "atlassian"
+                },
+                "aggregateprogress": {
+                    "progress": 0,
+                    "total": 0
+                },
+                "customfield_10200": "2|i0debf:",
+                "customfield_12501": null,
+                "customfield_12613": null,
+                "customfield_12612": null,
+                "timespent": null,
+                "aggregatetimespent": null,
+                "customfield_12610": null,
+                "customfield_11400": null,
+                "customfield_12602": null,
+                "customfield_12604": null,
+                "customfield_12606": null,
+                "customfield_12605": null,
+                "customfield_12608": null,
+                "customfield_12607": null,
+                "workratio": -1,
+                "customfield_12609": {
+                    "self": "https://cradlepoint.atlassian.net/rest/api/3/customFieldOption/11458",
+                    "value": "No",
+                    "id": "11458"
+                },
+                "created": "2024-03-12T19:40:57.400-0600",
+                "customfield_12395": null,
+                "customfield_12399": null,
+                "customfield_11500": {
+                    "hasEpicLinkFieldDependency": false,
+                    "showField": false,
+                    "nonEditableReason": {
+                        "reason": "EPIC_LINK_SHOULD_BE_USED",
+                        "message": "To set an epic as the parent, use the epic link instead"
+                    }
+                },
+                "security": null,
+                "customfield_12383": null,
+                "customfield_12385": null,
+                "customfield_12387": null,
+                "customfield_12386": null,
+                "customfield_12389": null,
+                "customfield_11600": "{}"
+            }
+        }
+    ]
+}

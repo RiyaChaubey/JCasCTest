@@ -1,0 +1,50 @@
+@Library('shared-main')_
+import com.ericom.jenkins.JiraUtils
+
+def thereAreChanges = false
+import java.time.*
+import groovy.json.JsonOutput
+def commitId = "7d2f9c945"
+def jsonState
+def isMaster = false
+def kubeVersion
+def ticketNumbers
+pipeline {
+    parameters {
+        string(name: 'KUBE_BRANCH', defaultValue: params.KUBE_BRANCH ?:'', description: 'Branch in kube to check for changes')
+    }
+    agent any
+    options {
+        timestamps()
+    }
+    stages {
+        stage('Checkout Repository') {
+            steps {
+                checkout(
+                        [$class                           : 'GitSCM', quietOperation: true,
+                            branches                         : [[name: "origin/${KUBE_BRANCH}"]],
+                            doGenerateSubmoduleConfigurations: false,
+                            extensions                       : [[$class: 'CleanCheckout']],
+                            submoduleCfg                     : [],
+                            userRemoteConfigs                : [[credentialsId: 'gitsshkey', name: 'origin', url: 'git@github.com:RiyaChaubey/JCasCTest.git']]
+                        ]
+                )
+            }
+        }
+        stage('Check shield python script') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
+                        def tickets = ['XCSB-429', 'PEZTE-37', 'SHIELD-23504']
+                        ticketsFile = "tickets.json"
+                        writeJSON file: ticketsFile, json: tickets
+                        sh "cat ${ticketsFile}"
+                        def tag = "123-test"
+                        def output = sh(script: """python3 ShieldBuild-GenerateJson.py --jira_pwd ${password} --versionNum ${tag} --ticketsFile ${ticketsFile}""", returnStdout: true).trim()
+                        echo "The output is: ${output}"
+                    }
+                }
+            }
+        }   
+    }
+}
