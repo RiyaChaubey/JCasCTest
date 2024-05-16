@@ -52,11 +52,7 @@ except:
 
 # Function use to move Cases
 def getNextTransition(issue,name):
-    print(issue)
-    print(name)
     transitions = jira.transitions(issue)
-    print("-------------------transitions----------------------------------")
-    print(transitions)
     for t in transitions:
         #print (t['id'], t['name']) 
         if (t['to']['name']==name):
@@ -64,8 +60,6 @@ def getNextTransition(issue,name):
         
 def moveCastState(issue,newState):
     NextStateNumber=getNextTransition(issue,newState)
-    print("-------------------NextStateNumber----------------------------------")
-    print(NextStateNumber)
     if dryRun:
         print ("[DEBUG] Dry Run - Going to change state to cases {} to {}".format(issue,NextStateNumber))
     else:
@@ -77,7 +71,6 @@ def update_fixed_in_build(issue, fixed_in_build):
 for x in data['cases']:
     try:
         issue=jira.issue(x)
-        print(issue)
         if x.startswith("SHIELD-") or x.startswith("AC-"):
             print("Moving case:{} to CI-Verified".format(x))
             moveCastState(x,"CI-Verified")
