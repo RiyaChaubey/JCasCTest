@@ -11,7 +11,7 @@ def kubeVersion
 def ticketNumbers
 pipeline {
     parameters {
-        string(name: 'JCAC_BRANCH', defaultValue: params.KUBE_BRANCH ?:'', description: 'Branch in kube to check for changes')
+        string(name: 'JCAC_BRANCH', defaultValue: params.JCAC_BRANCH ?:'', description: 'Branch in kube to check for changes')
     }
     agent any
     options {
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 checkout(
                         [$class                           : 'GitSCM', quietOperation: true,
-                            branches                         : [[name: "origin/${KUBE_BRANCH}"]],
+                            branches                         : [[name: "origin/${JCAC_BRANCH}"]],
                             doGenerateSubmoduleConfigurations: false,
                             extensions                       : [[$class: 'CleanCheckout']],
                             submoduleCfg                     : [],
