@@ -53,6 +53,8 @@ except:
 # Function use to move Cases
 def getNextTransition(issue,name):
     transitions = jira.transitions(issue)
+    print("-------------------transitions----------------------------------")
+    print(transitions)
     for t in transitions:
         #print (t['id'], t['name']) 
         if (t['to']['name']==name):
