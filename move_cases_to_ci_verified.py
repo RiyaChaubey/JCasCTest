@@ -68,19 +68,17 @@ def moveCastState(issue,newState):
 def update_fixed_in_build(issue, fixed_in_build):
     issue.update(fields={'customfield_12542': fixed_in_build}) # CP Jira - Fixed in Build
 
-# TODO: CP check cases state names in new Jira
 for x in data['cases']:
     try:
         issue=jira.issue(x)
-        if x.startswith("SHIELD-") or x.startswith("XCSB-"):
+        if x.startswith("SHIELD-") or x.startswith("AC-"):
             print("Moving case:{} to CI-Verified".format(x))
             moveCastState(x,"CI-Verified")
+            if args.fixed_in_build is not None:
+                update_fixed_in_build(issue, args.fixed_in_build)
         else:
             print("Moving case:{} to Review/In Test".format(x))
-            moveCastState(x,"Review/In Test")
-        if args.fixed_in_build is not None:
-            update_fixed_in_build(issue, args.fixed_in_build)
+            moveCastState(x,"Review/In Test")        
     except:
         print ("Exception While trying to move the case {} to CI-Verified or Review/In Test state".format(x))
         traceback.print_exc()
-
