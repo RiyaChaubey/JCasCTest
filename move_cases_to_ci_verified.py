@@ -43,8 +43,7 @@ except:
 jira = None
 try:
     jira = JIRA(
-    # basic_auth=("ericom.build.machine@gmail.com", args.jira_pwd),  # a username/password tuple [Not recommended]
-    basic_auth=("riya.chaubey@ericom.com", "Bre@k!ng2008@B@d"),  # a username/password tuple [Not recommended]
+    basic_auth=("ericom.build.machine@gmail.com", args.jira_pwd),  # a username/password tuple [Not recommended]
     server="https://cradlepoint.atlassian.net" )
 except:
     print("[FATAL] cannot connect jira verify username and password")
