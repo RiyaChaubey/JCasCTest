@@ -60,6 +60,8 @@ def getNextTransition(issue,name):
         
 def moveCastState(issue,newState):
     NextStateNumber=getNextTransition(issue,newState)
+    print("-------------------NextStateNumber----------------------------------")
+    print(NextStateNumber)
     if dryRun:
         print ("[DEBUG] Dry Run - Going to change state to cases {} to {}".format(issue,NextStateNumber))
     else:
