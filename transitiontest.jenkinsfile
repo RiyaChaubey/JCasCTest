@@ -121,7 +121,7 @@ pipeline {
                         // python3 moveTicketsBetweenStates.py --fromState CI-Verified --toState Resolved --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
         
                         // """
-                        }
+                        //}
                 } // script
             }//steps
         }   
