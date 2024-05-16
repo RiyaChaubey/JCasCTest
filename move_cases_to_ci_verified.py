@@ -52,6 +52,8 @@ except:
 
 # Function use to move Cases
 def getNextTransition(issue,name):
+    print(issue)
+    print(name)
     transitions = jira.transitions(issue)
     print("-------------------transitions----------------------------------")
     print(transitions)
