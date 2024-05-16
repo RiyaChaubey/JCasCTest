@@ -104,14 +104,14 @@ pipeline {
                         // } catch (Exception e) {
                         //     echo "Failed adding comment: ${e.toString()}"
                         // }
-                        withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
-                            def changesFile = 'changes-2.txt'
-                            def ticketsIdsFile = "tickets-2.txt"
-                            sh """
-                            pip3 install -r requirements.txt
-                        python3 moveTicketsBetweenStates.py --fromState 'In Review' --toState 'Review/In Test' --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
+                        // withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
+                        //     def changesFile = 'changes-2.txt'
+                        //     def ticketsIdsFile = "tickets-2.txt"
+                        //     sh """
+                        //     pip3 install -r requirements.txt
+                        // python3 moveTicketsBetweenStates.py --fromState 'In Review' --toState 'Review/In Test' --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
         
-                        """
+                        // """
                         // python3 moveTicketsBetweenStates.py --fromState 'Review/In Test' --toState Done --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
                         
                         //     changesFile = 'changes-3.txt'
