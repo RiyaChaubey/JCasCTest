@@ -10,6 +10,8 @@ import json
 import sys
 import traceback
 
+
+print("DO I EVEN START???")
 parser = argparse.ArgumentParser(
                     prog = 'Get JIRA Cases',
                     description = 'Query JiRA for Pull Cases',
