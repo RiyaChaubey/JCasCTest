@@ -13,7 +13,7 @@ pipeline {
     parameters {
         string(name: 'JCAC_BRANCH', defaultValue: params.JCAC_BRANCH ?:'', description: 'Branch in kube to check for changes')
     }
-    agent any
+    agent { label 'jenkins-slave-helm-node12-16' }
     options {
         timestamps()
     }
