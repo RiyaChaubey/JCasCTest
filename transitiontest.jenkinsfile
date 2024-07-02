@@ -79,8 +79,11 @@ pipeline {
                             sh """
                             export > /tmp/my_env.txt
                             # sleep 600 || true
+                            python3 -m venv myvenv
+                            source myvenv/bin/activate
                             pip3 install -r requirements.txt
                             python3 move_cases_to_ci_verified.py --jira_pwd ${password} --jiracases_filename ./cases.json --fixed_in_build 123-test
+                            deactivate
                             """
                             commentForTickets = "Added in version 123-test"
                         } //with Credentials
