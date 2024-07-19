@@ -80,6 +80,7 @@ pipeline {
                             export > /tmp/my_env.txt
                             # sleep 600 || true
                             pip3 install -r requirements.txt
+                            cat ./cases.json
                             python3 move_cases_to_ci_verified.py --jira_pwd ${password} --jiracases_filename ./cases.json --fixed_in_build 123-test
                             """
                             commentForTickets = "Added in version 123-test"
