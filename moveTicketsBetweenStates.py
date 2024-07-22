@@ -170,7 +170,7 @@ def main():
                   }
                   }
     print("Lets go!")
-    multilog = prepare_multi_log("{}-{}-log.txt".format(args.fromState.replace(' ', ''), args.toState.replace('/In ', '')))
+    multilog = prepare_multi_log("{}-{}-log.txt".format(args.fromState.replace('/In ', ''), args.toState.replace('/In ', '')))
     handled_issues = {}
     issues = get_issues_of_state(args.fromState, multilog, url_params)
 

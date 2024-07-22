@@ -43,11 +43,11 @@ pipeline {
                             git log --format='XXX: %H' --name-only -50 ${previousCommit}..HEAD  | grep -v XXX | sort | uniq
                             """
                             
-                                def contributorsEmail = sh(script: "git log --format='%ae' -10 ${previousCommit}..HEAD | sort | uniq", returnStdout: true).trim().split('\n')
+                                def contributorsEmail = sh(script: "git log --format='%ae' -5 ${previousCommit}..HEAD | sort | uniq", returnStdout: true).trim().split('\n')
                                 echo "Contributors: ${contributorsEmail}"
-                                ticketNumbers = sh(script: "git log --format='%B' -10 ${previousCommit}..HEAD | grep -E -o '\\b(SHIELD|XCSB|PEZTE)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
+                                ticketNumbers = sh(script: "git log --format='%B' -5 ${previousCommit}..HEAD | grep -E -o '\\b(SHIELD|XCSB|PEZTE)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
                                 echo "Tickets: ${ticketNumbers}"
-                                def prsNum = sh(script: """git log -10 ${previousCommit}..HEAD | grep "Merge pull request" | wc -l""", returnStdout: true).trim()
+                                def prsNum = sh(script: """git log -5 ${previousCommit}..HEAD | grep "Merge pull request" | wc -l""", returnStdout: true).trim()
                                 echo "Number of PRs: ${prsNum}"
                                 // kubeVersion = readFile("version.txt").trim().replace('\n', '').replace('\r', '')
                                 def jsonStateDict = [cases            : ticketNumbers,
