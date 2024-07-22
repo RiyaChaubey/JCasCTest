@@ -44,45 +44,12 @@ def request_jira(url_params, method, url, data=""):
 def get_issues_of_state(state, multilog, url_params):
     multilog.debug("get_issues_of_state - {}".format(state))
     url = "search"
-    # TODO: CP new project names
     payload = "{ \n  \"jql\": \"project in (PEZTE) AND Status = '" + state + "'\"\n}"
     multilog.info("get_issues_of_state payload - {}".format(payload))
     response = request_jira(url_params, "POST", url, payload)
     data = json.loads(response.text.encode('utf-8'))["issues"]
     multilog.debug("get_issues_of_state() total issues:".format(len(data)))
     return data
-
-def trans_from_jira(issue, to_state, multilog, url_params):
-    try:
-        url = f"issue/{issue}/transitions"
-        response = request_jira(url_params, "GET", url)
-        data = json.loads(response.text.encode())
-        for trans in data['transitions']:
-            multilog.debug(f"{trans['id']} - to {trans['to']['name']}")
-            if trans['to']['name'] == to_state:
-                return trans['id']
-    except Exception as e:
-        multilog.info("Failed getting transitions for ticket {} - {}".format(issue, str(e)))
-    return None
-
-
-def get_issue_transition(issue, from_state, to_state, multilog, url_params):
-    new_trans = trans_from_jira(issue, to_state, multilog, url_params)
-    if new_trans is not None:
-        return new_trans
-
-def get_issue_tech_domains(issue, multilog, url_params):
-    url = "issue/{}".format(issue)
-    response = request_jira(url_params, "GET", url)
-    # multilog.debug(f"get_issue_tech_domain response: {response.text.encode()}")
-    data = json.loads(response.text.encode())
-    tech_domain_field = "customfield_12549" # CP Jira Tech Domain
-    if tech_domain_field in data["fields"]:
-        multilog.debug(f"Ticket has property: {data['fields'][tech_domain_field]}")
-        tech_domains = [str(x["value"]) for x in data["fields"][tech_domain_field]]
-        multilog.debug(f"get_issue_tech_domain type: {tech_domains}")
-        return tech_domains
-    return ""
 
 
 def add_labels_to_tickets(issue, multilog, url_params, new_label):
@@ -93,69 +60,18 @@ def add_labels_to_tickets(issue, multilog, url_params, new_label):
         payload = '{"fields": {"labels": ["' + new_label + '"]}}'
         multilog.debug("The payload is: {}".format(payload))
         response = request_jira(url_params, "PUT", url, payload)
-
-
-def get_issue_type():
-    print()
-
-
-def transition_ticket(issue, from_state, to_state, multilog, url_params, assigneeId, specialAssigneeId):
-    multilog.debug("transition_ticket() issueNum{}\n".format(issue) )
-    transition = get_issue_transition(issue=issue, from_state=from_state, to_state=to_state,multilog=multilog, url_params=url_params)
-    response = True
-    if transition is not None:
-        multilog.debug("transition_ticket() transition string {}".format(transition))
-        url = "issue/{}/transitions".format(issue)
-        payload = '{\n\t"transition": {\n\t\t"id":"' + str(transition) + '"\n\t}\t\n}'
-        multilog.debug("The payload is: {}".format(payload))
-        response = request_jira(url_params, "POST", url, payload)
-        if response.status_code == 204:
-            multilog.debug("transition_ticket() response ok")
+        if response.status_code < 400:
+            multilog.debug("add_labels_to_tickets() response ok")
             response = True
         else:
-            multilog.debug("transition_ticket() response fail")
+            multilog.debug("add_labels_to_tickets() response fail")
             response = False
-
-        if assigneeId is not None:
-            if specialAssigneeId is not None:
-                try:
-                    multilog.debug(f"Consider special assignee {specialAssigneeId}")
-                    parts = specialAssigneeId.split(":")
-                    if len(parts) == 2:
-                        tech_domain = parts[0]
-                        tech_assignee = parts[1]
-                        multilog.debug(f"The specialAssigneeId is: {parts[0]} and {parts[1]}")
-                        ticket_tech_domains = get_issue_tech_domains(issue, multilog, url_params)
-                        multilog.debug(f"The tech domain: {ticket_tech_domains}")
-                        if len(ticket_tech_domains) > 0:
-                            if tech_domain in ticket_tech_domains:
-                                multilog.debug(f"Ticket has special tech domain - use {tech_assignee} as assignee")
-                                assigneeId = tech_assignee
-                    else:
-                        multilog.debug(f"Invalid special assignee parameter {specialAssigneeId}. Ignoring")
-                except:
-                    multilog.debug(f"exception raised working on case {issue}")
-            payload = '{"fields":{"customfield_12554": {"accountId": "' + str(assigneeId) + '" }}}' # CP Jira - Testing owner
-            multilog.debug("The payload is: {}".format(payload))
-            url = "issue/{}".format(issue)
-            response = request_jira(url_params, "PUT", url, payload)
-            if response.status_code < 400:
-                multilog.debug("Setting testing owner passed OK")
-                response = True
-            else:
-                multilog.debug("Setting testing owner failed")
-                response = False
-    else:
-        multilog.fatal("transition_ticket failed finding transition for issue {}".format(issue))
-        return False
-    return response
 
 
 def main():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     parser = argparse.ArgumentParser()
     parser.add_argument('--fromState', required=True, help='The state to move from')
-    parser.add_argument('--toState', required=True, help='The state to move to')
     parser.add_argument('--password', required=True, help='The users password')
     parser.add_argument('--changeLogFile', required=True, help='The file to write the log to')
     parser.add_argument('--assigneeId', required=False, help='The ID of the person to assign to. Will not assign if not provided')
@@ -169,11 +85,9 @@ def main():
                       'Content-Type': 'application/json'
                   }
                   }
-    print("Lets go!")
-    multilog = prepare_multi_log("{}-{}-log.txt".format(args.fromState.replace('/In ', ''), args.toState.replace('/In ', '')))
+    multilog = prepare_multi_log("{}-log.txt".format(args.fromState.replace('/In ', '')))
     handled_issues = {}
     issues = get_issues_of_state(args.fromState, multilog, url_params)
-
     if len(issues) == 0:
         multilog.info("No tickets in state {}".format(args.fromState))
         return
@@ -183,36 +97,35 @@ def main():
             continue
 
         key = str(issue["key"])
-        if key in ('PEZTE-1013', 'PEZTE-1015'):
-            # print(issue)
-            add_labels_to_tickets(key, multilog, url_params, "deploy_to_qa")
-            issue_type = issue['fields']['issuetype']['name']
-    #     try:
-    #         multilog.debug("MainLoop: working on case {}".format(key))
-    #         summary = str(issue["fields"]["summary"])
-    #         multilog.debug("Case desc {}".format(summary))
-    #         if transition_ticket(key, args.fromState, args.toState, multilog, url_params, args.assigneeId, args.specialAssigneeId):
-    #             handled_issues[key] = summary
-    #     except:
-    #         multilog.fatal("exception raised working on case {}".format(key))
-    #         traceback.print_exc()
+        # remove this; only for testing
+        if key not in ('PEZTE-1013', 'PEZTE-1015'):
+            continue
+        try:
+            multilog.debug("MainLoop: working on case {}".format(key))
+            summary = str(issue["fields"]["summary"])
+            multilog.debug("Case desc {}".format(summary))
+            if add_labels_to_tickets(key, multilog, url_params, "deploy_to_qa"):
+                handled_issues[key] = summary
+        except:
+            multilog.fatal("exception raised working on case {}".format(key))
+            traceback.print_exc()
 
-    # to_print = ""
-    # for key, value in handled_issues.items():
-    #     to_print += "- " + key.replace("\\", "") + " - " + value + " \\n"
-    # to_print = to_print.replace("\'", "")
-    # to_print = to_print.replace("\"", "")
-    # to_print = to_print.replace("\$", "")
-    # print(to_print)
-    # file1 = open(args.changeLogFile, 'w')
-    # file1.write(to_print)
-    # file1.close()
-    # try:
-    #     if args.ticketIDsFile is not None:
-    #         with open(args.ticketIDsFile, "w") as tickets_file:
-    #             tickets_file.write( ",".join(handled_issues.keys()))
-    # except Exception as e:
-    #     multilog.fatal("Failed saving ticket numbers - {}".format(str(e)))
+    to_print = ""
+    for key, value in handled_issues.items():
+        to_print += "- " + key.replace("\\", "") + " - " + value + " \\n"
+    to_print = to_print.replace("\'", "")
+    to_print = to_print.replace("\"", "")
+    to_print = to_print.replace("\$", "")
+    print(to_print)
+    file1 = open(args.changeLogFile, 'w')
+    file1.write(to_print)
+    file1.close()
+    try:
+        if args.ticketIDsFile is not None:
+            with open(args.ticketIDsFile, "w") as tickets_file:
+                tickets_file.write( ",".join(handled_issues.keys()))
+    except Exception as e:
+        multilog.fatal("Failed saving ticket numbers - {}".format(str(e)))
 
 
 if __name__ == '__main__':

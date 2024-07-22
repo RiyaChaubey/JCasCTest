@@ -74,9 +74,6 @@ for x in data['cases']:
     try:
         issue=jira.issue(x)
         issue_type = issue.fields.issuetype.name
-        print("-----------------")
-        print(x)
-        print(issue_type)
         
         if x.startswith("SHIELD-") or x.startswith("AC-"):
             print("Moving case:{} to CI-Verified".format(x))
