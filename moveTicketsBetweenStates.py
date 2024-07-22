@@ -72,6 +72,7 @@ def main():
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     parser = argparse.ArgumentParser()
     parser.add_argument('--fromState', required=True, help='The state to move from')
+    parser.add_argument('--addLabel', required=True, help='Label to add to Tickets')
     parser.add_argument('--password', required=True, help='The users password')
     parser.add_argument('--changeLogFile', required=True, help='The file to write the log to')
     parser.add_argument('--assigneeId', required=False, help='The ID of the person to assign to. Will not assign if not provided')
@@ -104,7 +105,7 @@ def main():
             multilog.debug("MainLoop: working on case {}".format(key))
             summary = str(issue["fields"]["summary"])
             multilog.debug("Case desc {}".format(summary))
-            if add_labels_to_tickets(key, multilog, url_params, "deploy_to_qa"):
+            if add_labels_to_tickets(key, multilog, url_params, args.addLabel):
                 handled_issues[key] = summary
         except:
             multilog.fatal("exception raised working on case {}".format(key))
