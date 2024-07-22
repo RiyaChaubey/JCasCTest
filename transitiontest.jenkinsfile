@@ -126,8 +126,8 @@ pipeline {
                                 echo "Failed adding ticket numbers - ${e.toString()}"
                             }
 
-                            def changesFile = 'changes-3.txt'
-                            def ticketsIdsFile = "tickets-3.txt"
+                            changesFile = 'changes-3.txt'
+                            ticketsIdsFile = "tickets-3.txt"
                             sh """
                             pip3 install -r requirements.txt
                         python3 moveTicketsBetweenStates.py --fromState 'Pending Release' --addLabel "deploy_to_qa" --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
