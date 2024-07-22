@@ -45,7 +45,7 @@ def get_issues_of_state(state, multilog, url_params):
     multilog.debug("get_issues_of_state - {}".format(state))
     url = "search"
     # TODO: CP new project names
-    payload = "{ \n  \"jql\": \"project in (SHIELD, XSWG, XRBI, XCSB, XSSP, PEZTE) AND Status = '" + state + "'\"\n}"
+    payload = "{ \n  \"jql\": \"project in (PEZTE) AND Status = '" + state + "'\"\n}"
     multilog.info("get_issues_of_state payload - {}".format(payload))
     response = request_jira(url_params, "POST", url, payload)
     data = json.loads(response.text.encode('utf-8'))["issues"]
@@ -83,6 +83,20 @@ def get_issue_tech_domains(issue, multilog, url_params):
         multilog.debug(f"get_issue_tech_domain type: {tech_domains}")
         return tech_domains
     return ""
+
+
+def add_labels_to_tickets(issue, multilog, url_params, new_label):
+    url = "issue/{}".format(issue)
+    response = request_jira(url_params, "GET", url)
+    data = json.loads(response.text.encode())
+    if "labels" in data["fields"]:
+        payload = '{"fields": {"labels": ["' + new_label + '"]}}'
+        multilog.debug("The payload is: {}".format(payload))
+        response = request_jira(url_params, "PUT", url, payload)
+
+
+def get_issue_type():
+    print()
 
 
 def transition_ticket(issue, from_state, to_state, multilog, url_params, assigneeId, specialAssigneeId):
@@ -159,6 +173,7 @@ def main():
     multilog = prepare_multi_log("{}-{}-log.txt".format(args.fromState.replace(' ', ''), args.toState.replace('/In ', '')))
     handled_issues = {}
     issues = get_issues_of_state(args.fromState, multilog, url_params)
+
     if len(issues) == 0:
         multilog.info("No tickets in state {}".format(args.fromState))
         return
@@ -168,32 +183,36 @@ def main():
             continue
 
         key = str(issue["key"])
-        try:
-            multilog.debug("MainLoop: working on case {}".format(key))
-            summary = str(issue["fields"]["summary"])
-            multilog.debug("Case desc {}".format(summary))
-            if transition_ticket(key, args.fromState, args.toState, multilog, url_params, args.assigneeId, args.specialAssigneeId):
-                handled_issues[key] = summary
-        except:
-            multilog.fatal("exception raised working on case {}".format(key))
-            traceback.print_exc()
+        if key in ('PEZTE-1013', 'PEZTE-1015'):
+            # print(issue)
+            add_labels_to_tickets(key, multilog, url_params, "deploy_to_qa")
+            issue_type = issue['fields']['issuetype']['name']
+    #     try:
+    #         multilog.debug("MainLoop: working on case {}".format(key))
+    #         summary = str(issue["fields"]["summary"])
+    #         multilog.debug("Case desc {}".format(summary))
+    #         if transition_ticket(key, args.fromState, args.toState, multilog, url_params, args.assigneeId, args.specialAssigneeId):
+    #             handled_issues[key] = summary
+    #     except:
+    #         multilog.fatal("exception raised working on case {}".format(key))
+    #         traceback.print_exc()
 
-    to_print = ""
-    for key, value in handled_issues.items():
-        to_print += "- " + key.replace("\\", "") + " - " + value + " \\n"
-    to_print = to_print.replace("\'", "")
-    to_print = to_print.replace("\"", "")
-    to_print = to_print.replace("\$", "")
-    print(to_print)
-    file1 = open(args.changeLogFile, 'w')
-    file1.write(to_print)
-    file1.close()
-    try:
-        if args.ticketIDsFile is not None:
-            with open(args.ticketIDsFile, "w") as tickets_file:
-                tickets_file.write( ",".join(handled_issues.keys()))
-    except Exception as e:
-        multilog.fatal("Failed saving ticket numbers - {}".format(str(e)))
+    # to_print = ""
+    # for key, value in handled_issues.items():
+    #     to_print += "- " + key.replace("\\", "") + " - " + value + " \\n"
+    # to_print = to_print.replace("\'", "")
+    # to_print = to_print.replace("\"", "")
+    # to_print = to_print.replace("\$", "")
+    # print(to_print)
+    # file1 = open(args.changeLogFile, 'w')
+    # file1.write(to_print)
+    # file1.close()
+    # try:
+    #     if args.ticketIDsFile is not None:
+    #         with open(args.ticketIDsFile, "w") as tickets_file:
+    #             tickets_file.write( ",".join(handled_issues.keys()))
+    # except Exception as e:
+    #     multilog.fatal("Failed saving ticket numbers - {}".format(str(e)))
 
 
 if __name__ == '__main__':

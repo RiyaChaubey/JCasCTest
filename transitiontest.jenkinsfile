@@ -43,11 +43,11 @@ pipeline {
                             git log --format='XXX: %H' --name-only -50 ${previousCommit}..HEAD  | grep -v XXX | sort | uniq
                             """
                             
-                                def contributorsEmail = sh(script: "git log --format='%ae' -50 ${previousCommit}..HEAD | sort | uniq", returnStdout: true).trim().split('\n')
+                                def contributorsEmail = sh(script: "git log --format='%ae' -10 ${previousCommit}..HEAD | sort | uniq", returnStdout: true).trim().split('\n')
                                 echo "Contributors: ${contributorsEmail}"
-                                ticketNumbers = sh(script: "git log --format='%B' -50 ${previousCommit}..HEAD | grep -E -o '\\b(SHIELD|XCSB|PEZTE)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
+                                ticketNumbers = sh(script: "git log --format='%B' -10 ${previousCommit}..HEAD | grep -E -o '\\b(SHIELD|XCSB|PEZTE)-[0-9]+' | sort | uniq", returnStdout: true).trim().split('\n')
                                 echo "Tickets: ${ticketNumbers}"
-                                def prsNum = sh(script: """git log -50 ${previousCommit}..HEAD | grep "Merge pull request" | wc -l""", returnStdout: true).trim()
+                                def prsNum = sh(script: """git log -10 ${previousCommit}..HEAD | grep "Merge pull request" | wc -l""", returnStdout: true).trim()
                                 echo "Number of PRs: ${prsNum}"
                                 // kubeVersion = readFile("version.txt").trim().replace('\n', '').replace('\r', '')
                                 def jsonStateDict = [cases            : ticketNumbers,
@@ -105,14 +105,13 @@ pipeline {
                         // } catch (Exception e) {
                         //     echo "Failed adding comment: ${e.toString()}"
                         // }
-                        // withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
-                        //     def changesFile = 'changes-2.txt'
-                        //     def ticketsIdsFile = "tickets-2.txt"
-                        //     sh """
-                        //     pip3 install -r requirements.txt
-                        // python3 moveTicketsBetweenStates.py --fromState 'In Review' --toState 'Review/In Test' --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
-        
-                        // """
+                        withCredentials([string(credentialsId: 'jiraApi', variable: 'password')]) {
+                            def changesFile = 'changes-2.txt'
+                            def ticketsIdsFile = "tickets-2.txt"
+                            sh """
+                            pip3 install -r requirements.txt
+                        python3 moveTicketsBetweenStates.py --fromState 'Review/In Test' --toState 'Done' --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
+                        """
                         // python3 moveTicketsBetweenStates.py --fromState 'Review/In Test' --toState Done --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
                         
                         //     changesFile = 'changes-3.txt'
