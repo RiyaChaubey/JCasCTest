@@ -73,13 +73,21 @@ def update_fixed_in_build(issue, fixed_in_build):
 for x in data['cases']:
     try:
         issue=jira.issue(x)
+        issue_type = issue.fields.issuetype.name
+        print("-----------------")
+        print(x)
+        print(issue_type)
+        
         if x.startswith("SHIELD-") or x.startswith("AC-"):
             print("Moving case:{} to CI-Verified".format(x))
             moveCastState(x,"CI-Verified")
             if args.fixed_in_build is not None:
                 update_fixed_in_build(issue, args.fixed_in_build)
+        elif issue_type == "Escalation":
+            print("Moving {} type issue - case:{} to Pending Release".format(issue_type, x))
+            moveCastState(x,"Pending Release")
         else:
-            print("Moving case:{} to Review/In Test".format(x))
+            print("Moving {} type issue - case:{} to Review/In Test".format(issue_type, x))
             moveCastState(x,"Review/In Test")        
     except:
         print ("Exception While trying to move the case {} to CI-Verified or Review/In Test state".format(x))
