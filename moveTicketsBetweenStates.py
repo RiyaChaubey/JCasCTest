@@ -99,7 +99,7 @@ def main():
 
         key = str(issue["key"])
         # remove this; only for testing
-        if key not in ('PEZTE-1013', 'PEZTE-1015'):
+        if key not in ('PEZTE-1013', 'PEZTE-1015', 'PEZTE-1039'):
             continue
         try:
             multilog.debug("MainLoop: working on case {}".format(key))
