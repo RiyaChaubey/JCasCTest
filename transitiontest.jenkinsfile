@@ -112,6 +112,39 @@ pipeline {
                             pip3 install -r requirements.txt
                         python3 moveTicketsBetweenStates.py --fromState 'Review/In Test' --addLabel "deploy_to_qa" --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
                         """
+                        if (fileExists(changesFile)) {
+                                def changeLog = readFile changesFile
+                                println "Merged tickets: ${changeLog}"
+                            }
+                            try {
+                                if (fileExists(ticketsIdsFile)) {
+                                    def newTickets = readFile file: ticketsIdsFile
+                                    echo "New tickets are: ${newTickets}"
+                                    mergedTickets.addAll(newTickets.split(','))
+                                }
+                            } catch (Exception e) {
+                                echo "Failed adding ticket numbers - ${e.toString()}"
+                            }
+
+                            def changesFile = 'changes-3.txt'
+                            def ticketsIdsFile = "tickets-3.txt"
+                            sh """
+                            pip3 install -r requirements.txt
+                        python3 moveTicketsBetweenStates.py --fromState 'Pending Release' --addLabel "deploy_to_qa" --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
+                        """
+                        if (fileExists(changesFile)) {
+                                def changeLog = readFile changesFile
+                                println "Merged tickets: ${changeLog}"
+                            }
+                            try {
+                                if (fileExists(ticketsIdsFile)) {
+                                    def newTickets = readFile file: ticketsIdsFile
+                                    echo "New tickets are: ${newTickets}"
+                                    mergedTickets.addAll(newTickets.split(','))
+                                }
+                            } catch (Exception e) {
+                                echo "Failed adding ticket numbers - ${e.toString()}"
+                            }
                         }
                         // python3 moveTicketsBetweenStates.py --fromState 'Review/In Test' --toState Done --password ${password} --changeLogFile ${changesFile} --ticketIDsFile ${ticketsIdsFile}
                         
